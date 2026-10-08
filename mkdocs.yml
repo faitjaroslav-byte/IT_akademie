@@ -1,0 +1,43 @@
+site_name: IT akademie
+site_description: Webová učebnice a pracovní materiály pro IT akademii
+site_author: Jaroslav Fait
+
+theme:
+  name: material
+  language: cs
+  palette:
+    - scheme: default
+      primary: blue
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Přepnout do tmavého režimu
+    - scheme: slate
+      primary: blue
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Přepnout do světlého režimu
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+nav:
+  - IT akademie: index.md
+  - Workspace Studio:
+      - Scénáře pro učitele: workspace-studio/scenare.md
