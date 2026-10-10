@@ -37,6 +37,10 @@ markdown_extensions:
 extra_css:
   - assets/stylesheets/extra.css
 
+exclude_docs: |
+  workspace-studio/08-workshop.md
+  workspace-studio/scenare.md
+
 nav:
   - IT akademie: index.md
   - Workspace Studio:
@@ -48,5 +52,3 @@ nav:
       - 5. Vyhodnocení retrospektivy: workspace-studio/05-retrospektiva.md
       - 6. Ranní briefing: workspace-studio/06-ranni-briefing.md
       - 7. Testování a provoz: workspace-studio/07-testovani-a-provoz.md
-      - 8. Workshop pro učitele: workspace-studio/08-workshop.md
-      - Původní zdrojové scénáře: workspace-studio/scenare.md

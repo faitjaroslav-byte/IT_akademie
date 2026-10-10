@@ -1,7 +1,7 @@
 # Workspace Studio
 
 <div class="lesson-meta">
-<strong>Doporučený čas:</strong> 6-8 vyučovacích hodin nebo jednodenní učitelský workshop<br>
+<strong>Doporučený čas:</strong> 6-8 vyučovacích hodin<br>
 <strong>Výstup kurzu:</strong> Účastník dokáže navrhnout, sestavit, otestovat a upravit jednoduché flow v Google Workspace Studio.
 </div>
 
@@ -32,7 +32,6 @@ Po absolvování kurzu bys měl/a umět:
 | [Vyhodnocení retrospektivy](05-retrospektiva.md) | Jak z odpovědí studentů získat doporučení pro další hodinu? |
 | [Ranní briefing](06-ranni-briefing.md) | Jak si nechat pravidelně připravit aktuální přehled zpráv? |
 | [Testování a provoz](07-testovani-a-provoz.md) | Jak ověřit, že flow funguje a nezpůsobí škodu? |
-| [Workshop pro učitele](08-workshop.md) | Jak kurz projít ve skupině během školení? |
 
 ## Hlavní princip
 
@@ -46,7 +45,7 @@ flowchart LR
     D --> E[Akce ve Workspace]
 ```
 
-Pokud úkol stojí hlavně na přesném převodu datumu, složitém formátování čísel nebo hromadné transformaci tabulek, může být vhodnější jiný nástroj. Pokud je jádrem úkolu pochopit text, vybrat podstatné informace nebo připravit pracovní doporučení, Workspace Studio dává smysl.
+Workspace Studio je později implementovaný produkt a zatím nemá parametry plnohodnotných automatizačních platforem jako Make, n8n nebo Power Automate. Pokud úkol stojí hlavně na přesném převodu datumu, složitém formátování čísel, hromadné transformaci dat nebo napojení na mnoho externích služeb, může být vhodnější specializovaná automatizační platforma. Pokud je jádrem úkolu pochopit obsah ve Workspace, vybrat podstatné informace nebo připravit pracovní doporučení, Workspace Studio dává smysl.
 
 ## Výstup kurzu
 

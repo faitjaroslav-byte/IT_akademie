@@ -67,20 +67,31 @@ U jednotlivých běhů lze ověřit:
 
 ## Studio není Make
 
-Workspace Studio je silné v modelu:
+Workspace Studio je později implementovaný produkt. Zatím nemá parametry plnohodnotných automatizačních platforem, jako jsou Make, n8n, Power Automate a podobné nástroje. Jeho hlavní síla je jinde: v jednoduchém návrhu flow uvnitř Google Workspace a v přímém propojení s Gemini.
+
+Dobře funguje hlavně v modelu:
 
 ```text
 Spusť → pochop obsah → rozhodni → proveď Workspace akci
 ```
 
-Je slabší v obecných transformacích dat, například:
+Oproti specializovaným automatizačním platformám má zatím několik omezení:
 
 - parsování datumu z volného textu,
 - převody datových typů,
 - formátování čísel,
-- složité funkce typu `parseDate()` nebo `formatNumber()`.
+- složité funkce typu `parseDate()` nebo `formatNumber()`,
+- obecně nižší konektivita na externí služby mimo ekosystém Google Workspace,
+- menší prostor pro pokročilé větvení, technické transformace a práci s datovými strukturami.
 
-Při návrhu flow proto vybírej scénáře, ve kterých data už přicházejí ve formátu, který cílový krok umí přímo použít.
+Na druhou stranu má pro běžného uživatele několik silných stránek:
+
+- je plně integrované do Google Workspace,
+- působí uživatelsky přístupněji než technické automatizační platformy,
+- dobře se hodí pro učitele a týmy, které už pracují v Gmailu, Docs, Sheets, Forms nebo Chatu,
+- umožňuje rychle sestavit jednoduché AI workflow bez samostatné integrační platformy.
+
+Při návrhu flow proto vybírej scénáře, ve kterých data už přicházejí v rozumně použitelném formátu a hlavní hodnota spočívá v porozumění obsahu, shrnutí, klasifikaci nebo jednoduché Workspace akci.
 
 ## Kdy flow vypnout
 
