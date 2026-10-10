@@ -9,3 +9,15 @@
 .md-typeset table:not([class]) {
   font-size: 0.78rem;
 }
+
+.md-typeset h1 {
+  font-weight: 700;
+}
+
+.md-typeset h2 {
+  margin-top: 2rem;
+}
+
+.md-typeset code {
+  white-space: pre-wrap;
+}

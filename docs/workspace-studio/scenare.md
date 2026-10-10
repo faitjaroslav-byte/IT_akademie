@@ -1,4 +1,11 @@
-# Google Workspace Studio – 4 praktické scénáře pro učitele
+# Původní zdrojové scénáře
+
+<div class="lesson-meta">
+<strong>Účel stránky:</strong> Referenční záznam původních scénářů, ze kterých vznikl kurz Workspace Studio.<br>
+<strong>Doporučení:</strong> Pro výuku používejte především rozpracované kapitoly kurzu. Tato stránka slouží jako zdroj promptů a rychlá pracovní reference.
+</div>
+
+## Google Workspace Studio – 4 praktické scénáře pro učitele
 
 Tato kapitola obsahuje čtyři hotové scénáře pro Google Workspace Studio. Jsou zvolené tak, aby ukázaly různé typy automatizace:
 
@@ -11,7 +18,7 @@ Tato kapitola obsahuje čtyři hotové scénáře pro Google Workspace Studio. J
 
 ---
 
-# 1. Sumarizace e-mailů
+## 1. Sumarizace e-mailů
 
 ## Cíl
 
@@ -149,7 +156,7 @@ flowchart TD
 
 ---
 
-# 2. Štítky v e-mailech s pomocí AI
+## 2. Štítky v e-mailech s pomocí AI
 
 ## Cíl
 
@@ -335,7 +342,7 @@ Doporučení:
 
 ---
 
-# 3. Vyhodnocení retrospektivy
+## 3. Vyhodnocení retrospektivy
 
 ## Cíl
 
@@ -544,7 +551,7 @@ Tělo zprávy:
 
 ---
 
-# 4. Ranní briefing – České školství
+## 4. Ranní briefing – České školství
 
 ## Cíl
 
@@ -657,7 +664,7 @@ Do těla vložte pouze proměnnou s výsledkem z Ask Gemini.
 
 ---
 
-# Co jednotlivé scénáře ukazují
+## Co jednotlivé scénáře ukazují
 
 | Scénář | Hlavní princip |
 |---|---|
@@ -668,7 +675,7 @@ Do těla vložte pouze proměnnou s výsledkem z Ask Gemini.
 
 ---
 
-# Důležité poznatky z práce s Workspace Studio
+## Důležité poznatky z práce s Workspace Studio
 
 ## Proměnné
 
@@ -736,7 +743,7 @@ Při návrhu flow je proto vhodné vybírat scénáře, ve kterých data již p�
 
 ---
 
-# Doporučená struktura workshopu
+## Doporučená struktura workshopu
 
 ```mermaid
 flowchart LR

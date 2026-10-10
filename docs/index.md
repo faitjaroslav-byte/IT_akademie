@@ -1,16 +1,26 @@
 # IT akademie
 
-Tato publikace slouží jako pracovní učebnice a zásobník scénářů pro IT akademii.
+IT akademie je praktická webová učebnice pro práci s moderními digitálními nástroji. Není zamýšlená jako katalog funkcí. Každý kurz vede od běžné pracovní situace k hotovému použitelnému postupu.
 
-Materiály jsou členěné podle tematických oblastí v levém panelu. První připravenou oblastí je **Workspace Studio**, která obsahuje praktické scénáře pro práci s Google Workspace Studio.
+První připravený kurz je **Workspace Studio**. Ukazuje, jak navrhovat jednoduché automatizace v Google Workspace tak, aby učiteli šetřily čas a zároveň zůstaly pod kontrolou.
 
-## Workspace Studio
+## První kurz: Workspace Studio
 
-V této části najdete scénáře, které ukazují různé typy automatizace v prostředí Google Workspace:
+V kurzu se naučíte:
 
-- sumarizace e-mailů,
-- štítkování e-mailů pomocí AI,
-- vyhodnocení retrospektivy,
-- ranní briefing.
+- navrhnout flow podle skutečné potřeby, ne podle seznamu tlačítek,
+- předávat data mezi kroky pomocí proměnných,
+- používat Gemini pro shrnutí, klasifikaci a analýzu,
+- testovat automatizace bezpečně,
+- poznat, kdy je automatizace vhodná a kdy je lepší ruční postup.
 
-Pokračujte na stránku [Scénáře pro učitele](workspace-studio/scenare.md).
+Kurz obsahuje čtyři kompletní scénáře:
+
+| Scénář | Co ukazuje |
+| --- | --- |
+| Sumarizace e-mailů | AI rozpozná důležitou zprávu a připraví pracovní souhrn. |
+| AI štítky v Gmailu | Inbox se třídí podle významu zprávy, ne jen podle odesílatele. |
+| Vyhodnocení retrospektivy | Odpovědi z Forms/Sheets se promění v doporučení pro další hodinu. |
+| Ranní briefing | Plánované flow připraví stručný přehled aktuálních zpráv. |
+
+Začněte stránkou [Přehled kurzu](workspace-studio/index.md).
