@@ -35,14 +35,12 @@ Data Studio je především **vrstva pro analýzu a prezentaci**, nikoli náhrad
 
 ## Alternativy a doplňky
 
-| Produkt | Hlavní role | Kdy by dával smysl v tomto kurzu |
-| --- | --- | --- |
-| **Data Studio** | Webový report nad připojenými zdroji | Chceme rychle vytvořit a sdílet interaktivní pohledy z Google Sheets. |
-| **Microsoft Power BI** | BI platforma pro přípravu dat, datové modely, výpočty a reporty | Škola už pracuje v prostředí Microsoftu nebo potřebuje rozsáhlejší modelování více tabulek. |
-| **Tableau** | Vizuální průzkum dat a tvorba interaktivních dashboardů | Potřebujeme intenzivně zkoumat vzorce v datech a připravovat bohaté vizualizace. |
-| **Metabase** | Otázky nad databází, jednoduché dashboardy a sdílení | Data máme v databázi a chceme rychlé dotazy a přehledy. |
-| **Snowflake** | Cloudová datová platforma pro ukládání a zpracování dat | Zpracováváme velké soubory a tým potřebuje společný datový základ; hotové souhrny pak lze zobrazit v BI nástroji. |
+Pro náš úkol je výchozím bodem **Data Studio**: připojíme Google Sheets a v prohlížeči sestavíme sdílený report. Následující „minus“ neznamená, že je jiný produkt obecně horší; říká, co je **pro tento jednoduchý školní postup** méně přímočaré.
 
-Power BI nabízí mimo jiné Power Query a datové modelování; Snowflake má ve svém rozhraní Snowsight také grafy a dashboardy, ale jeho hlavní úloha je širší než tvorba reportů. Proto nejde o zcela zaměnitelné produkty: Snowflake může připravovat data, která se následně vizualizují v Data Studiu nebo Power BI. [Microsoft: Power BI](https://learn.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview), [Tableau: dashboardy](https://help.tableau.com/current/pro/desktop/en-us/dashboards.htm), [Metabase: dashboardy](https://www.metabase.com/docs/latest/dashboards/introduction), [Snowflake: platforma](https://docs.snowflake.com/en/user-guide/intro-key-concepts), [Snowflake: Snowsight](https://docs.snowflake.com/en/user-guide/ui-snowsight)
+| Produkt | + Oproti Data Studiu | − Oproti Data Studiu v našem kurzu |
+| --- | --- | --- |
+| **Microsoft Power BI** | Power Query umí rozsáhleji čistit a měnit data; datový model propojuje tabulky a podporuje výpočty v DAX. | Pro plný postup s přípravou a modelem se používá hlavně aplikace Power BI Desktop pro Windows; hotový report se pak publikuje do online služby. Pro tři připravené listy je to více kroků. [Microsoft: Power BI](https://learn.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview) |
+| **Tableau + Tableau Prep** | Tableau podporuje podrobnější analytické výpočty; Tableau Prep umožňuje sestavit opakovatelný postup pro čištění, spojování a přetváření dat. | Příprava dat přes Tableau Prep je další pracovní krok a nástroj. U našich malých, již vyčištěných CSV jej nepotřebujeme. [Tableau: výpočty](https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_lod.htm), [Tableau Prep](https://help.tableau.com/current/prep/en-us/prep_about.htm) |
+| **Metabase** | Lze ukládat databázové dotazy včetně SQL a pravidelně posílat výsledky dashboardu e-mailem nebo do Slacku. | Je orientovaný hlavně na databáze. Synchronizace přímo z Google Sheets vyžaduje Metabase Cloud s doplňkem Cloud Storage, takže naše připojení tabulek není tak přímočaré. [Metabase: dotazy](https://www.metabase.com/docs/latest/questions/start), [odběry dashboardů](https://www.metabase.com/docs/latest/dashboards/subscriptions), [Google Sheets](https://www.metabase.com/docs/latest/cloud/google-sheets) |
 
 Pro naše malé, předem připravené výukové tabulky je Data Studio vhodná volba: studenti se mohou soustředit na smysl grafu, filtru a popisku. Nejdříve však potřebujeme rozumět tomu, **co data PISA skutečně měří**. Tomu se věnuje [kapitola 1](01-pisa-a-interpretace.md).

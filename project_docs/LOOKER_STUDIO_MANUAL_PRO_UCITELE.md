@@ -18,7 +18,7 @@ Před první hodinou otevřete všechny tři CSV z [přehledu kurzu](../docs/loo
 
 | Hodina | Činnost | Hotový výstup |
 | --- | --- | --- |
-| 0 | Vysvětlit zdroj → report, porovnat Data Studio s Power BI a Snowflake | Účastník odliší BI report od datového skladu |
+| 0 | Vysvětlit zdroj → report, porovnat Data Studio s Power BI, Tableau a Metabase | Účastník vysvětlí volbu nástroje pro připravená data |
 | 1 | Vysvětlit PISA: cyklus, výběr, oblasti, populaci a meze interpretace | Účastník správně popíše, koho výsledek reprezentuje |
 | 2 | Importovat tři CSV, zkontrolovat čísla a řádky | Listy Vysledky, Prirodni_vedy a Druhy_skol_CR |
 | 3 | Připojit Sheets, ověřit tabulku ČR, vytvořit karty | Stránka Česko v kontextu |
