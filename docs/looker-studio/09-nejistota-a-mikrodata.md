@@ -1,4 +1,4 @@
-# 9. Rozšíření: nejistota a mikrodata
+# Rozšíření: nejistota a mikrodata
 
 <div class="lesson-meta">
 <strong>Čas:</strong> 45 minut navazující práce<br>

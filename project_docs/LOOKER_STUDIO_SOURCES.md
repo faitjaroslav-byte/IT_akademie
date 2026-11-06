@@ -8,7 +8,7 @@ OECD nyní zveřejňuje PISA 2025. FAQ uvádí první publikaci 8. září 2026.
 
 Zdroje jsou uvedeny v publikovaném datovém slovníku jako provenance dat. Mezinárodní soubor neobsahuje přesné skóre 2022, intervaly spolehlivosti ani odhady podle druhu školy. Publikovaná změna se používá přímo, nikoli jako cesta k rekonstrukci skóre 2022. ČR science 490 a změna −7 mohou působit odlišně od rozdílu zaokrouhlených výsledků z různých vydání; nepřepisujeme publikované vstupy.
 
-Mezinárodní agregace představují celou věkovou populaci PISA. Třetí CSV přepisuje hodnoty pro pět českých druhů škol z grafů 2.1.14, 2.3.3 a 2.4.4 národní zprávy ČŠI PISA 2025; nebyly doplněny standardní chyby ani podskupiny jiných zemí. Samostatná kapitola vysvětluje hranice srovnatelnosti a přípravu dalších vážených odhadů. Hotový nativní report na účtu Google není součástí dodávky; kurz obsahuje jeho reprodukovatelný manuál a vstupní data.
+Mezinárodní agregace představují celou věkovou populaci PISA. Třetí CSV přepisuje hodnoty pro pět českých druhů škol z grafů 2.1.14, 2.3.3 a 2.4.4 národní zprávy ČŠI PISA 2025; nebyly doplněny standardní chyby ani podskupiny jiných zemí. Samostatná kapitola vysvětluje hranice srovnatelnosti a přípravu dalších vážených odhadů. Hotový nativní report na účtu Google není součástí dodávky; kurz obsahuje návody a vstupní data. Interní step-by-step postup pro lektora je pouze v repozitáři v `project_docs/LOOKER_STUDIO_MANUAL_PRO_UCITELE.md` a není publikovaný na webu.
 
 ## Dokumentace produktu
 

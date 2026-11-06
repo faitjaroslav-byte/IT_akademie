@@ -1,4 +1,4 @@
-# Looker Studio: Česko a svět v PISA 2025
+# Data Studio: Česko a svět v PISA 2025
 
 <div class="lesson-meta">
 <strong>Doporučený čas:</strong> 8 × 45 minut; zkrácený workshop 180 minut; volitelné rozšíření 45 minut<br>
@@ -6,9 +6,9 @@
 <strong>Vstupní znalosti:</strong> Základní práce s tabulkou a školní účet Google.
 </div>
 
-Jak si vedou čeští žáci ve srovnání se sousedními zeměmi? Co skrývá průměrné skóre? Jaké otázky mají smysl pro plánování výuky? Na těchto otázkách si osvojíte tvorbu reportu v Google Looker Studio. Postupy používají běžný konektor Google Sheets a nevyžadují programování.
+Jak si vedou čeští žáci ve srovnání se sousedními zeměmi? Co skrývá průměrné skóre? Jaké otázky mají smysl pro plánování výuky? Na těchto otázkách si osvojíte tvorbu reportu v Google Data Studiu. Postupy používají běžný konektor Google Sheets a nevyžadují programování.
 
-Google v dubnu 2026 službu přejmenoval na **Data Studio**. V kurzu ponecháváme známý název Looker Studio; v rozhraní a odkazované dokumentaci můžete potkat nový název. [Google: změna názvu služby](https://docs.cloud.google.com/data-studio/release-notes)
+Google v dubnu 2026 přejmenoval **Looker Studio na Data Studio**. Oba názvy proto můžete v návodech a rozhraní potkat. [Google: změna názvu služby](https://docs.cloud.google.com/data-studio/release-notes)
 
 Kurz pracuje s **PISA 2025**. OECD uvádí zveřejnění prvního svazku výsledků 8. září 2026. Přiložená data jsou malý výukový výběr publikovaných agregací, ověřený k 5. listopadu 2026. [OECD: PISA FAQ](https://www.oecd.org/en/about/programmes/pisa/pisa-frequently-asked-questions-faqs.html)
 
@@ -34,15 +34,16 @@ Report bude mít pět stránek: **Česko v kontextu**, **Srovnání zemí**, **Z
 
 ## Postup kurzu
 
-1. [Pochopte populaci, skóre a hranice interpretace](01-pisa-a-interpretace.md).
-2. [Importujte připravená data a zkontrolujte jejich strukturu](02-priprava-dat.md).
-3. [Připojte Google Sheets a vytvořte první report](03-prvni-report.md).
-4. [Sestavte srovnávací pohledy](04-srovnani.md).
-5. [Přidejte mapu a ověřte filtry](05-mapa-a-filtry.md).
-6. [Prozkoumejte změny a rozložení výsledků](06-zmeny-a-rozlozeni.md).
-7. [Sestavte pohled podle českých druhů škol a posuďte srovnatelnost](07-stredni-skoly.md).
-8. [Dokončete report podle manuálu pro učitele](08-manual-pro-ucitele.md).
-9. [Rozšiřte report o standardní chyby z veřejných mikrodat](09-nejistota-a-mikrodata.md).
+- **0.** [Seznamte se s Data Studiem a jeho alternativami](00-uvod-do-data-studia.md).
+- **1.** [Pochopte šetření PISA, populaci a hranice interpretace](01-pisa-a-interpretace.md).
+- **2.** [Importujte připravená data a zkontrolujte jejich strukturu](02-priprava-dat.md).
+- **3.** [Připojte Google Sheets a vytvořte první report](03-prvni-report.md).
+- **4.** [Sestavte srovnávací pohledy](04-srovnani.md).
+- **5.** [Přidejte mapu a ověřte filtry](05-mapa-a-filtry.md).
+- **6.** [Prozkoumejte změny a rozložení výsledků](06-zmeny-a-rozlozeni.md).
+- **7.** [Sestavte pohled podle českých druhů škol a posuďte srovnatelnost](07-stredni-skoly.md).
+
+Volitelné pokračování: [nejistota a mikrodata](09-nejistota-a-mikrodata.md).
 
 ## Data ke stažení
 

@@ -2,18 +2,24 @@
 
 <div class="lesson-meta">
 <strong>Čas:</strong> 45 minut<br>
-<strong>Výstup:</strong> Rozlišíte popis výsledku, jeho nejistotu a závěr o výuce.
+<strong>Výstup:</strong> Popíšete, co PISA zkoumá, koho testuje a jak správně číst její výsledky.
 </div>
 
-## Od pedagogické otázky k ukazateli
+## Co je PISA
 
-Vedení školy chce vědět, zda má posílit práci s odborným textem. PISA může nabídnout širší kontext čtenářské gramotnosti. Samotný národní průměr ale neurčuje potřeby jedné školy. Pro vlastní třídy potřebujete také žákovské práce, diagnostické úlohy a jejich rozbor.
+**PISA** (*Programme for International Student Assessment*) je mezinárodní výběrové šetření OECD. Zjišťuje, jak patnáctiletí žáci dokážou použít získané znalosti a dovednosti při řešení situací z běžného života. Neověřuje přesně učivo jedné země ani neuděluje známky jednotlivým žákům. Účastní se vybrané školy a v nich vybraní žáci; výsledky za zemi jsou odhady pro vymezenou populaci, nikoli součet výsledků všech žáků. [OECD: PISA – časté otázky](https://www.oecd.org/en/about/programmes/pisa/pisa-frequently-asked-questions-faqs.html), [ČŠI: o šetření PISA](https://www.csicr.cz/cz/Mezinarodni-setreni/PISA/O-setreni-PISA)
 
-PISA zkoumá použití znalostí v matematice, čtení a přírodních vědách. Skóre je údaj na škále dané oblasti. Není to procento správných odpovědí ani školní známka. Tři škály proto neslučujeme do jednoho „celkového výsledku“.
+Šetření obvykle probíhá **každé tři roky**. Základními oblastmi jsou **čtenářská, matematická a přírodovědná gramotnost**. V každém cyklu dostává jedna oblast větší prostor: v roce 2025 to byly přírodní vědy. Další témata se mohou měnit; cyklus 2025 zahrnul například učení v digitálním světě a v části zemí také volitelný test angličtiny jako cizího jazyka. Výsledky doplňují žákovské a školní dotazníky o okolnostech učení. [OECD: PISA 2025](https://www.oecd.org/en/about/programmes/pisa/pisa-frequently-asked-questions-faqs.html), [ČŠI: o šetření PISA](https://www.csicr.cz/cz/Mezinarodni-setreni/PISA/O-setreni-PISA)
+
+## Jak šetření probíhá
+
+Školy a žáci se vybírají podle výzkumného plánu tak, aby výsledky reprezentovaly cílovou populaci. Test je převážně **počítačový** a trvá přibližně **dvě hodiny**. Žáci neřeší všichni totožnou sadu úloh; testování doplňuje dotazník pro žáky a dotazník pro vedení školy. Odpovědi se vyhodnocují s ohledem na výběrový design a zveřejňují jako srovnatelné ukazatele na škálách jednotlivých oblastí. [OECD: technické standardy PISA 2025](https://www.oecd.org/content/dam/oecd/en/about/programmes/edu/pisa/publications/technical-standards/PISA_2025_Technical_Standards.pdf), [OECD: PISA FAQ](https://www.oecd.org/en/about/programmes/pisa/pisa-frequently-asked-questions-faqs.html)
+
+Skóre v přírodních vědách, čtení a matematice je bodový údaj na **samostatné škále**. Není to procento správných odpovědí ani školní známka. Tři škály proto neslučujeme do jednoho „celkového výsledku“.
 
 ## Populace a srovnání
 
-OECD vymezuje cílovou skupinu věkem 15 let a 3 měsíce až 16 let a 2 měsíce a nejméně sedmým ročníkem vzdělávání. Výběr zahrnuje různé typy škol. [Vymezení populace OECD](https://www.oecd.org/en/about/programmes/pisa/pisa-frequently-asked-questions-faqs.html)
+OECD vymezuje cílovou skupinu věkem 15 let a 3 měsíce až 16 let a 2 měsíce a nejméně sedmým ročníkem vzdělávání. V ČR proto vzorek zahrnuje základní školy, gymnázia i další střední školy. Jde o **věkovou skupinu**, ne o jeden ročník či jeden typ školy. [Vymezení populace OECD](https://www.oecd.org/en/about/programmes/pisa/pisa-frequently-asked-questions-faqs.html), [ČŠI: o šetření PISA](https://www.csicr.cz/cz/Mezinarodni-setreni/PISA/O-setreni-PISA)
 
 Z toho plynou tři praktická pravidla:
 
@@ -37,11 +43,3 @@ OECD průměr je publikovaná reference OECD. **Není průměrem Evropy ani prů
 ## Změna mezi cykly
 
 PISA nepozoruje tutéž třídu po třech letech. Změna mezi roky 2022 a 2025 porovnává odhady různých věkových kohort. V souboru používáme publikovanou změnu OECD. Zpětně z ní neodvozujeme přesné skóre roku 2022: zaokrouhlení může vést k odchylce od původní publikované hodnoty.
-
-## Úkol: opravte interpretaci
-
-Přeformulujte větu: „Čeští středoškoláci jsou lepší než Evropa, takže naše výuka funguje.“
-
-Možné řešení: „U sledované oblasti porovnáme výsledek českých patnáctiletých s publikovanou referencí OECD a vybranými evropskými zeměmi. Z výsledku samotného nezjistíme příčinu rozdílu ani výkon naší školy.“
-
-Na konci hodiny napište jednu zjišťovací otázku, například „Jak se profil ČR liší mezi třemi oblastmi?“, a jednu otázku, kterou dostupné agregace nezodpovědí, například „Které naše třídy potřebují podporu?“.

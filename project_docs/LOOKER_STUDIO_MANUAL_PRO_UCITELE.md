@@ -1,39 +1,54 @@
-# 8. Manuál pro učitele
+# Data Studio: step-by-step manuál pro učitele
+
+Tento pracovní materiál je uložen pouze v repozitáři. Není součástí publikované učebnice ani navigace MkDocs.
 
 <div class="lesson-meta">
-<strong>Plná varianta:</strong> 8 × 45 minut<br>
+<strong>Plná varianta:</strong> 8 × 45 minut (kapitoly 0–7)<br>
 <strong>Zkrácená varianta:</strong> 180 minut<br>
 <strong>Výstup:</strong> Vlastní report, ověřené filtry a komentář použitelný při pedagogické poradě.
 </div>
 
 ## Před kurzem
 
-Vyzkoušejte školní účet na Looker Studio a připojení Google Sheets. Pokud doména službu nepovoluje, ověřte přístup se správcem školy před školením. Připravte kopii tabulky se třemi listy podle [kapitoly 2](02-priprava-dat.md). Lektor si dopředu vytvoří jeden referenční report podle následujícího postupu. Každý účastník pracuje se svou kopií dat.
+Vyzkoušejte školní účet na Data Studio (dříve Looker Studio) a připojení Google Sheets. Pokud doména službu nepovoluje, ověřte přístup se správcem školy před školením. Připravte kopii tabulky se třemi listy podle [kapitoly 2](../docs/looker-studio/02-priprava-dat.md). Lektor si dopředu vytvoří jeden referenční report podle následujícího postupu. Každý účastník pracuje se svou kopií dat.
+
+Před první hodinou otevřete všechny tři CSV z [přehledu kurzu](../docs/looker-studio/index.md), ověřte jejich oddělovač a desetinné hodnoty a připravte záložní kopii v Google Sheets. Ujistěte se, že máte oprávnění vytvářet a sdílet reporty, a rozhodněte, zda účastníci budou pracovat samostatně, nebo ve dvojicích. Referenční report používejte ke kontrole, ne jako náhradu jejich vlastní práce.
 
 ## Přesný sled práce
 
 | Hodina | Činnost | Hotový výstup |
 | --- | --- | --- |
-| 1 | Vymezit populaci PISA, opravit interpretační výroky | Dvě výzkumné otázky a popis populace |
+| 0 | Vysvětlit zdroj → report, porovnat Data Studio s Power BI a Snowflake | Účastník odliší BI report od datového skladu |
+| 1 | Vysvětlit PISA: cyklus, výběr, oblasti, populaci a meze interpretace | Účastník správně popíše, koho výsledek reprezentuje |
 | 2 | Importovat tři CSV, zkontrolovat čísla a řádky | Listy Vysledky, Prirodni_vedy a Druhy_skol_CR |
 | 3 | Připojit Sheets, ověřit tabulku ČR, vytvořit karty | Stránka Česko v kontextu |
 | 4 | Pruhový graf, pivot a rozdíl proti OECD | Stránka Srovnání zemí |
 | 5 | Mapa, přepínač oblasti, filtr zemí | Ověřené interaktivní pohledy |
 | 6 | Změna, skládaný a bodový graf | Stránka Změny a rozložení |
-| 7 | Připojit české druhy škol, vytvořit tabulku a graf | Stránka Druhy škol v ČR |
-| 8 | Napsat komentář, otestovat sdílení a obhájit závěr | Finální report pro kolegu |
+| 7 | Připojit české druhy škol, vytvořit tabulku a graf, shrnout omezení | Stránka Druhy škol v ČR a hotový komentář |
 
-Pro 180minutový workshop věnujte 20 minut metodice, 30 minut importu a připojení, 45 minut kartám a srovnání, 35 minut filtrům a rozložení, 20 minut interpretaci SŠ a 30 minut dokončení a sdílení. Bodový graf a rozšíření o vlastní data mohou účastníci dokončit samostatně.
+Pro 180minutový workshop věnujte 15 minut představení nástroje a PISA, 30 minut importu a připojení, 45 minut kartám a srovnání, 35 minut filtrům a rozložení, 25 minut interpretaci školních skupin a 30 minut dokončení a sdílení. Bodový graf a rozšíření o vlastní data mohou účastníci dokončit samostatně.
+
+## Vedení jednotlivých hodin
+
+1. **Hodina 0:** Na jedné tabulce ukažte rozdíl mezi uloženými daty a reportem. Otevřete [úvod do Data Studia](../docs/looker-studio/00-uvod-do-data-studia.md). Nechte účastníky určit, co je zdroj, co vizualizace a co by vyžadovalo samostatné zpracování dat.
+2. **Hodina 1:** Projděte [popis PISA](../docs/looker-studio/01-pisa-a-interpretace.md). Zeptejte se, proč nelze celou českou populaci PISA označit za středoškoláky a proč bodový rozdíl sám o sobě nedokazuje účinek výuky. Není potřeba zadávat závěrečný písemný úkol.
+3. **Hodina 2:** Podle [přípravy dat](../docs/looker-studio/02-priprava-dat.md) nechte vytvořit tři listy. Před pokračováním každý účastník ukáže počty řádků 36, 11 a 15 a číselný typ skóre.
+4. **Hodina 3:** Veďte účastníky podle [prvního reportu](../docs/looker-studio/03-prvni-report.md). Po vytvoření tří karet zkontrolujte ČR 477 / 468 / 490. Nesprávné hodnoty nejprve řešte filtrem oblasti a agregací.
+5. **Hodina 4:** Na [srovnání zemí](../docs/looker-studio/04-srovnani.md) nechte vytvořit pruhový graf, pivot a rozdíl proti OECD. Ověřte, že OECD není další země v žebříčku a B-S-J-Z není celá Čína.
+6. **Hodina 5:** Podle [mapy a filtrů](../docs/looker-studio/05-mapa-a-filtry.md) ověřte na dvou různých volbách, že ovladače skutečně mění zamýšlené grafy. Zkontrolujte mapový typ pole pro země.
+7. **Hodina 6:** Podle [změn a rozložení](../docs/looker-studio/06-zmeny-a-rozlozeni.md) oddělte bodový průměr od podílů žáků. Připomeňte, že změna mezi cykly nesleduje stejné jednotlivce.
+8. **Hodina 7:** Podle [školních skupin](../docs/looker-studio/07-stredni-skoly.md) doplňte poslední zdroj, stránku a krátký komentář. Na závěr otevřete report v režimu čtenáře, vyzkoušejte sdílení s kolegou a vraťte filtry do výchozího stavu.
 
 ## Od prázdného reportu k hotovému výsledku
 
-1. Stáhněte tři CSV z [přehledu kurzu](index.md) a importujte je do Sheets. Ověřte 36, 11 a 15 datových řádků.
+1. Stáhněte tři CSV z [přehledu kurzu](../docs/looker-studio/index.md) a importujte je do Sheets. Ověřte 36, 11 a 15 datových řádků.
 2. Připojte `Vysledky`, nastavte typy a Average u metrik. Zkontrolujte tři české výsledky v tabulce.
 3. Na stránce `Česko v kontextu` vytvořte tři karty podle oblasti, každou s pevnou podmínkou ČR.
 4. Přidejte stránku `Srovnání zemí`. Vytvořte pruhový graf přírodních věd, pivot bez součtů a pole `rozdil_oecd`.
 5. Přidejte mapu a přepínače. Odstraňte pevné omezení oblasti pouze u komponent, které mají reagovat na ovladač. Seskupte je.
 6. Na stránce `Změny a rozložení` vytvořte graf publikované změny. Připojte druhý zdroj pro podíly a bodový graf.
-7. Připojte `Druhy_skol_CR` jako třetí zdroj. Na stránce `Druhy škol v ČR` vytvořte pivot a graf podle [kapitoly 7](07-stredni-skoly.md).
+7. Připojte `Druhy_skol_CR` jako třetí zdroj. Na stránce `Druhy škol v ČR` vytvořte pivot a graf podle [kapitoly 7](../docs/looker-studio/07-stredni-skoly.md).
 8. Poslední stránku pojmenujte `Co z dat vyplývá`. Vložte tři části: zjištění, omezení, návrh aktivity pro vlastní třídu. Doplňte populaci, cyklus, jednotky, zdroj a datum převzetí dat. Uveďte, že jde o deset vybraných zemí, jeden čínský region a české druhy škol.
 9. V režimu zobrazení projděte všechny ovladače. Vraťte je do výchozího stavu.
 10. Otevřete **Sdílet / Share**, přidejte konkrétního kolegu jako čtenáře a vyzkoušejte přístup z jeho účtu. Odkaz do kurzu přidávejte až po ověření přístupu.
@@ -84,4 +99,4 @@ Příklad přijatelného závěru: „Rozložení výsledků nám připomíná p
 
 ## Volitelné pokračování: 45 minut
 
-Pro skupinu, která už zvládla osm základních lekcí, použijte [lekci o nejistotě a mikrodatech](09-nejistota-a-mikrodata.md). Připravte dva další listy `Odhady_zeme` a `Odhady_skoly`; nevkládejte jejich řádky do původních listů. Účastníci vytvoří tabulku skóre a standardních chyb a přibližné intervaly. Kontrolní hodnoty: ČR v přírodních vědách 490,278 ± 2,586 bodu; základní škola v ČR 459,016 ± 2,955 bodu. Znaménko ± zde označuje **jednu standardní chybu**, nikoli 95% interval. Výstup musí rozlišovat deset zemí, region B-S-J-Z a české školní skupiny.
+Pro skupinu, která už zvládla osm základních lekcí, použijte [lekci o nejistotě a mikrodatech](../docs/looker-studio/09-nejistota-a-mikrodata.md). Připravte dva další listy `Odhady_zeme` a `Odhady_skoly`; nevkládejte jejich řádky do původních listů. Účastníci vytvoří tabulku skóre a standardních chyb a přibližné intervaly. Kontrolní hodnoty: ČR v přírodních vědách 490,278 ± 2,586 bodu; základní škola v ČR 459,016 ± 2,955 bodu. Znaménko ± zde označuje **jednu standardní chybu**, nikoli 95% interval. Výstup musí rozlišovat deset zemí, region B-S-J-Z a české školní skupiny.
