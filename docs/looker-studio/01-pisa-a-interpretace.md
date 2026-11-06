@@ -27,16 +27,29 @@ Z toho plynou tři praktická pravidla:
 - Výsledky všech patnáctiletých v ČR nelze přejmenovat na „čeští středoškoláci“.
 - Srovnání pouze středoškoláků mezi zeměmi ovlivňuje věk přechodu na SŠ a způsob rozdělování žáků do vzdělávacích drah.
 
-## Co nám říká průměr
+## Co se měří a co najdeme v datech
 
-Národní skóre je odhad z výběrového šetření. Dvě země s blízkým bodovým výsledkem se nemusí statisticky významně lišit. Výukový soubor obsahuje zaokrouhlené odhady bez standardních chyb; umožňuje popisné srovnání, nikoli testování významnosti.
+PISA neměří jen zapamatované učivo. Sleduje, jak žák použije znalosti při práci s textem, matematickým problémem nebo vědeckým tvrzením:
 
-| Výrok | Jak s ním naložit |
+| Oblast | Příklady sledovaných dovedností |
 | --- | --- |
-| „V tabulce má země A o několik bodů více.“ | Popis rozdílu bodových odhadů. |
-| „Země A má prokazatelně lepší výsledky.“ | Potřebujeme test rozdílu a informace o nejistotě. |
-| „Zavedení tabletů zvýšilo výkon.“ | Souvislost sama neprokazuje příčinu. |
-| „Naše škola dosáhne národního průměru.“ | Národní výsledek neurčuje výkon konkrétní školy. |
+| **Čtení** | Porozumět textu, vyhledat a propojit informace, posoudit jejich věrohodnost a význam. |
+| **Matematika** | Rozpoznat matematickou stránku situace, zvolit postup, vypočítat a vyložit výsledek v kontextu. |
+| **Přírodní vědy** | Vysvětlit jev, posoudit návrh zkoumání, kriticky vyhodnotit data a vědecké informace. V roce 2025 šlo o hlavní oblast šetření. |
+
+[OECD: čtenářská gramotnost](https://www.oecd.org/en/publications/how-does-pisa-define-and-measure-reading-literacy_efc4d0fe-en.html), [matematická gramotnost](https://www.oecd.org/en/topics/mathematics-literacy.html), [rámec přírodovědné gramotnosti PISA 2025](https://pisa-framework.oecd.org/science-2025/)
+
+V připravených [výukových tabulkách](data/README.md) jsou tyto ukazatele:
+
+| Ukazatel | Co vyjadřuje | Kde je |
+| --- | --- | --- |
+| **Bodové skóre** | Odhad průměrného výsledku patnáctiletých na škále jedné oblasti; není to procento správných odpovědí. | Všechny tři oblasti podle země; samostatně také podle pěti druhů škol v ČR. |
+| **Změna 2022–2025** | Rozdíl bodových odhadů mezi dvěma cykly, nikoli změnu výkonu týchž žáků. | Tabulka zemí a oblastí. |
+| **Podíl pod úrovní 2** | Část žáků, kteří v přírodních vědách nedosáhli základní dovednostní úrovně. | Tabulka přírodních věd. |
+| **Podíl na úrovních 5 a 6** | Část žáků s nejvyššími výsledky v přírodních vědách. | Tabulka přírodních věd. |
+| **Průměr OECD** | Publikovaná referenční hodnota pro danou oblast a cyklus. | Tabulka zemí a oblastí. |
+
+U podílů je `0.213` v CSV totéž co **21,3 %**. Podíl na úrovních 2–4 lze dopočítat jako zbytek do 100 %. Druh školy, země, oblast a cyklus jsou **členění**, nikoli další měřené skóre. PISA sbírá také odpovědi z dotazníků o prostředí a postojích žáků, ale tyto údaje nejsou v našich třech základních výukových CSV. Podrobný popis sloupců najdete v [datovém slovníku](data/README.md).
 
 OECD průměr je publikovaná reference OECD. **Není průměrem Evropy ani průměrem všech jednotlivých žáků.** Aritmetický průměr deseti zemí v našem výběru je pouze průměr tohoto výběru. V reportu jej nepoužívejte jako světovou referenci. B-S-J-Z jsou čtyři čínské oblasti, nikoli národní výsledek Číny; USA vyžadují zvláštní opatrnost kvůli upozornění OECD na nesplněné výběrové standardy.
 
