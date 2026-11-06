@@ -45,11 +45,12 @@ V připravených [výukových tabulkách](data/README.md) jsou tyto ukazatele:
 | --- | --- | --- |
 | **Bodové skóre** | Odhad průměrného výsledku patnáctiletých na škále jedné oblasti; není to procento správných odpovědí. | Všechny tři oblasti podle země; samostatně také podle pěti druhů škol v ČR. |
 | **Změna 2022–2025** | Rozdíl bodových odhadů mezi dvěma cykly, nikoli změnu výkonu týchž žáků. | Tabulka zemí a oblastí. |
-| **Podíl pod úrovní 2** | Část žáků, kteří v přírodních vědách nedosáhli základní dovednostní úrovně. | Tabulka přírodních věd. |
-| **Podíl na úrovních 5 a 6** | Část žáků s nejvyššími výsledky v přírodních vědách. | Tabulka přírodních věd. |
+| **Podíl pod úrovní 2** | Část žáků, kteří nedosáhli základní dovednostní úrovně. | Tabulka rozložení pro všechny tři oblasti. |
+| **Podíl na úrovních 2–4** | Část žáků se středními výsledky; ve výukovém souboru dopočtený zbytek do 100 %. | Tabulka rozložení pro všechny tři oblasti. |
+| **Podíl na úrovních 5 a 6** | Část žáků s nejvyššími výsledky v dané oblasti. | Tabulka rozložení pro všechny tři oblasti. |
 | **Průměr OECD** | Publikovaná referenční hodnota pro danou oblast a cyklus. | Tabulka zemí a oblastí. |
 
-U podílů je `0.213` v CSV totéž co **21,3 %**. Podíl na úrovních 2–4 lze dopočítat jako zbytek do 100 %. Druh školy, země, oblast a cyklus jsou **členění**, nikoli další měřené skóre. PISA sbírá také odpovědi z dotazníků o prostředí a postojích žáků, ale tyto údaje nejsou v našich třech základních výukových CSV. Podrobný popis sloupců najdete v [datovém slovníku](data/README.md).
+U podílů je `0.213` v CSV totéž co **21,3 %**. Všechny tři podíly se vztahují vždy k jedné oblasti; nesčítáme ani neprůměrujeme je napříč oblastmi. Druh školy, země, oblast a cyklus jsou **členění**, nikoli další měřené skóre. PISA sbírá také odpovědi z dotazníků o prostředí a postojích žáků, ale tyto údaje nejsou v našich třech základních výukových CSV. Podrobný popis sloupců najdete v [datovém slovníku](data/README.md).
 
 OECD průměr je publikovaná reference OECD. **Není průměrem Evropy ani průměrem všech jednotlivých žáků.** Aritmetický průměr deseti zemí v našem výběru je pouze průměr tohoto výběru. V reportu jej nepoužívejte jako světovou referenci. B-S-J-Z jsou čtyři čínské oblasti, nikoli národní výsledek Číny; USA vyžadují zvláštní opatrnost kvůli upozornění OECD na nesplněné výběrové standardy.
 

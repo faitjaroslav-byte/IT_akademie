@@ -20,7 +20,7 @@ Před první hodinou otevřete všechny tři CSV z [přehledu kurzu](../docs/loo
 | --- | --- | --- |
 | 0 | Vysvětlit zdroj → report, porovnat Data Studio s Power BI, Tableau a Metabase | Účastník vysvětlí volbu nástroje pro připravená data |
 | 1 | Vysvětlit PISA: cyklus, výběr, oblasti, populaci a meze interpretace | Účastník správně popíše, koho výsledek reprezentuje |
-| 2 | Importovat tři CSV, zkontrolovat čísla a řádky | Listy Vysledky, Prirodni_vedy a Druhy_skol_CR |
+| 2 | Importovat tři CSV, zkontrolovat čísla a řádky | Listy Vysledky, Rozlozeni a Druhy_skol_CR |
 | 3 | Připojit Sheets, ověřit tabulku ČR, vytvořit karty | Stránka Česko v kontextu |
 | 4 | Pruhový graf, pivot a rozdíl proti OECD | Stránka Srovnání zemí |
 | 5 | Mapa, přepínač oblasti, filtr zemí | Ověřené interaktivní pohledy |
@@ -33,21 +33,21 @@ Pro 180minutový workshop věnujte 15 minut představení nástroje a PISA, 30 m
 
 1. **Hodina 0:** Na jedné tabulce ukažte rozdíl mezi uloženými daty a reportem. Otevřete [úvod do Data Studia](../docs/looker-studio/00-uvod-do-data-studia.md). Nechte účastníky určit, co je zdroj, co vizualizace a co by vyžadovalo samostatné zpracování dat.
 2. **Hodina 1:** Projděte [popis PISA](../docs/looker-studio/01-pisa-a-interpretace.md). Zeptejte se, proč nelze celou českou populaci PISA označit za středoškoláky a proč bodový rozdíl sám o sobě nedokazuje účinek výuky. Není potřeba zadávat závěrečný písemný úkol.
-3. **Hodina 2:** Podle [přípravy dat](../docs/looker-studio/02-priprava-dat.md) nechte vytvořit tři listy. Před pokračováním každý účastník ukáže počty řádků 36, 11 a 15 a číselný typ skóre.
+3. **Hodina 2:** Podle [přípravy dat](../docs/looker-studio/02-priprava-dat.md) nechte vytvořit tři listy. Před pokračováním každý účastník ukáže počty datových řádků 36, 33 a 15 a číselný typ skóre i všech tří podílů.
 4. **Hodina 3:** Veďte účastníky podle [prvního reportu](../docs/looker-studio/03-prvni-report.md). Po vytvoření tří karet zkontrolujte ČR 477 / 468 / 490. Nesprávné hodnoty nejprve řešte filtrem oblasti a agregací.
 5. **Hodina 4:** Na [srovnání zemí](../docs/looker-studio/04-srovnani.md) nechte vytvořit pruhový graf, pivot a rozdíl proti OECD. Ověřte, že OECD není další země v žebříčku a B-S-J-Z není celá Čína.
 6. **Hodina 5:** Podle [mapy a filtrů](../docs/looker-studio/05-mapa-a-filtry.md) ověřte na dvou různých volbách, že ovladače skutečně mění zamýšlené grafy. Zkontrolujte mapový typ pole pro země.
-7. **Hodina 6:** Podle [změn a rozložení](../docs/looker-studio/06-zmeny-a-rozlozeni.md) oddělte bodový průměr od podílů žáků. Připomeňte, že změna mezi cykly nesleduje stejné jednotlivce.
+7. **Hodina 6:** Podle [změn a rozložení](../docs/looker-studio/06-zmeny-a-rozlozeni.md) oddělte bodový průměr od podílů žáků. Na českém pruhu ověřte postupně přírodní vědy, čtení a matematiku; ovladač musí umožnit právě jednu oblast. Připomeňte, že změna mezi cykly nesleduje stejné jednotlivce.
 8. **Hodina 7:** Podle [školních skupin](../docs/looker-studio/07-stredni-skoly.md) doplňte poslední zdroj, stránku a krátký komentář. Na závěr otevřete report v režimu čtenáře, vyzkoušejte sdílení s kolegou a vraťte filtry do výchozího stavu.
 
 ## Od prázdného reportu k hotovému výsledku
 
-1. Stáhněte tři CSV z [přehledu kurzu](../docs/looker-studio/index.md) a importujte je do Sheets. Ověřte 36, 11 a 15 datových řádků.
+1. Stáhněte tři CSV z [přehledu kurzu](../docs/looker-studio/index.md) a importujte je do Sheets. Ověřte 36, 33 a 15 datových řádků.
 2. Připojte `Vysledky`, nastavte typy a Average u metrik. Zkontrolujte tři české výsledky v tabulce.
 3. Na stránce `Česko v kontextu` vytvořte tři karty podle oblasti, každou s pevnou podmínkou ČR.
 4. Přidejte stránku `Srovnání zemí`. Vytvořte pruhový graf přírodních věd, pivot bez součtů a pole `rozdil_oecd`.
 5. Přidejte mapu a přepínače. Odstraňte pevné omezení oblasti pouze u komponent, které mají reagovat na ovladač. Seskupte je.
-6. Na stránce `Změny a rozložení` vytvořte graf publikované změny. Připojte druhý zdroj pro podíly a bodový graf.
+6. Na stránce `Změny a rozložení` vytvořte graf publikované změny. Připojte list `Rozlozeni`, vytvořte skládaný a bodový graf a seskupte je s ovladačem oblasti nastaveným na jediný výběr.
 7. Připojte `Druhy_skol_CR` jako třetí zdroj. Na stránce `Druhy škol v ČR` vytvořte pivot a graf podle [kapitoly 7](../docs/looker-studio/07-stredni-skoly.md).
 8. Poslední stránku pojmenujte `Co z dat vyplývá`. Vložte tři části: zjištění, omezení, návrh aktivity pro vlastní třídu. Doplňte populaci, cyklus, jednotky, zdroj a datum převzetí dat. Uveďte, že jde o deset vybraných zemí, jeden čínský region a české druhy škol.
 9. V režimu zobrazení projděte všechny ovladače. Vraťte je do výchozího stavu.
@@ -66,11 +66,13 @@ Nastavení popisuje [Google: přihlašovací údaje datových zdrojů](https://d
 | Karta ČR, přírodní vědy | 490 |
 | Rozdíl ČR proti OECD, přírodní vědy | +8 bodů |
 | Publikovaná změna ČR, přírodní vědy | −7 bodů; bez závěru o průkazném poklesu |
-| Český pruh rozložení | 21,3 % / 71,7 % / 7,0 % |
+| Český pruh, přírodní vědy | 21,3 % / 71,7 % / 7,0 % |
+| Český pruh, čtení | 27,0 % / 67,9 % / 5,1 % |
+| Český pruh, matematika | 29,0 % / 61,2 % / 9,8 % |
 | Základní graf zemí | Deset zemí bez regionu B-S-J-Z a reference OECD |
 | Český graf druhů škol | Pět druhů × tři oblasti; víceleté gymnázium 595 v přírodních vědách |
 
-Kontrolní hodnoty vycházejí z [OECD Education GPS: ČR](https://gpseducation.oecd.org/CountryProfile?primaryCountry=CZE&topic=PI&treshold=10) a [národní zprávy ČŠI](https://csi.gov.cz/CSICR/media/Prilohy/2024_p%C5%99%C3%ADlohy/Dokumenty/PISA-2025_final.pdf). Prostřední podíl a rozdíl proti OECD jsou výpočty z přiložených zaokrouhlených vstupů.
+Kontrolní hodnoty vycházejí z [OECD Education GPS: ČR](https://gpseducation.oecd.org/CountryProfile?primaryCountry=CZE&topic=PI&treshold=10), [tabulek OECD I.B1.2a.10–12](https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en/full-report/results-for-countries-and-economies_33854635.html) a [národní zprávy ČŠI](https://csi.gov.cz/CSICR/media/Prilohy/2024_p%C5%99%C3%ADlohy/Dokumenty/PISA-2025_final.pdf). Prostřední podíl a rozdíl proti OECD jsou výpočty z přiložených zaokrouhlených vstupů.
 
 ## Když se výsledek neshoduje
 
@@ -78,6 +80,7 @@ Kontrolní hodnoty vycházejí z [OECD Education GPS: ČR](https://gpseducation.
 | --- | --- |
 | Skóre je součet nebo překvapivě vysoké | Nastavte Average, doplňte oblast a zkontrolujte duplicity klíče. |
 | Karta ukazuje průměr více oblastí | Přidejte přesný filtr oblasti. |
+| Graf rozložení ukazuje průměr tří oblastí | Ovladač `oblast` nastavte na jediný výběr, výchozí Přírodní vědy, bez možnosti vybrat vše. |
 | Podíl je 2130 % | Zkontrolujte vstup 0.213; procentní formát násobí zobrazení stem. |
 | Číslo je text | Opravte import a desetinný oddělovač v Sheets, pak aktualizujte pole zdroje. |
 | Filtr vyprázdní graf | Hledejte konflikt pevného filtru a ovladače, zdroj nebo nesprávnou skupinu. |

@@ -35,7 +35,7 @@ Rozsah filtru vychází z jeho zdroje dat a seskupení komponent. Po návratu do
 
 Přidejte druhý rozbalovací seznam pro pole `zeme` a zařaďte ho do stejné skupiny. Umožněte vícenásobný výběr. Porovnejte například pouze ČR a Slovensko. Při resetu filtrů se musí znovu zobrazit deset zemí.
 
-U prvních tří karet ČR na jiné stránce ponechte pevné filtry. Nezměňte ovladače na úroveň celého reportu, pokud nechcete jejich účinek přenášet i tam. Zdroje `Vysledky` a `Prirodni_vedy` mají samostatné ovladače; shodný název pole sám nezaručuje filtrování přes oba zdroje.
+U prvních tří karet ČR na jiné stránce ponechte pevné filtry. Nezměňte ovladače na úroveň celého reportu, pokud nechcete jejich účinek přenášet i tam. Zdroje `Vysledky` a `Rozlozeni` mají samostatné ovladače; shodný název pole sám nezaručuje filtrování přes oba zdroje.
 
 ## Zkouška filtrů
 

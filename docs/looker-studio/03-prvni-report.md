@@ -44,8 +44,8 @@ Výsledkem musí být 477, 468 a 490. Samotný filtr země nestačí: karta bez 
 ## Druhý datový zdroj
 
 1. V reportu otevřete **Zdroje / Resource → Spravovat přidané zdroje dat / Manage added data sources**.
-2. Přidejte konektor Google Sheets pro list `Prirodni_vedy` a pojmenujte ho `PISA25_Prirodni`.
-3. Pro podíly nastavte typ Procenta a agregaci Average, pro skóre Number a Average.
+2. Přidejte konektor Google Sheets pro list `Rozlozeni` a pojmenujte ho `PISA25_Rozlozeni`.
+3. Pro všechny tři podíly nastavte typ Procenta a agregaci Average, pro skóre Number a Average. Grafy budou vždy filtrované na jedinou oblast.
 4. Vraťte se do reportu. Zdroj bude potřeba v [kapitole 6](06-zmeny-a-rozlozeni.md).
 
 ## Uložení a první zkouška

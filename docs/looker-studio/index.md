@@ -48,7 +48,7 @@ Volitelné pokračování: [nejistota a mikrodata](09-nejistota-a-mikrodata.md).
 ## Data ke stažení
 
 - [Výsledky podle země a oblasti, CSV](data/pisa2025-vysledky.csv): 36 řádků, deset zemí, B-S-J-Z a reference OECD ve třech oblastech.
-- [Rozložení v přírodních vědách, CSV](data/pisa2025-prirodni-vedy.csv): 11 řádků pro skládaný a bodový graf.
+- [Rozložení ve třech oblastech, CSV](data/pisa2025-rozlozeni.csv): 33 řádků pro skládaný a bodový graf, včetně podílů pod úrovní 2, na úrovních 2–4 a 5–6.
 - [Česko podle druhu školy, CSV](data/pisa2025-cesko-druhy-skol.csv): 15 řádků, pět druhů škol ve třech oblastech.
 - [Rozšíření vypočtené z veřejných mikrodat PISA 2025](data/README.md#rozsireni-z-verejneho-zakovskeho-souboru-oecd): země, české druhy škol a programy včetně standardních chyb a počtů žáků.
 - [Datový slovník a původ údajů](data/README.md).

@@ -2,9 +2,9 @@
 
 ## Co soubory obsahují
 
-[pisa2025-vysledky.csv](pisa2025-vysledky.csv) a [pisa2025-prirodni-vedy.csv](pisa2025-prirodni-vedy.csv) jsou výukový výběr skutečných agregací PISA 2025 publikovaných OECD. [pisa2025-cesko-druhy-skol.csv](pisa2025-cesko-druhy-skol.csv) obsahuje české výsledky podle druhu školy přepsané z grafů národní zprávy ČŠI. Převzato 5. listopadu 2026. Nejde o úplnou světovou databázi ani mikrodata.
+[pisa2025-vysledky.csv](pisa2025-vysledky.csv) a [pisa2025-rozlozeni.csv](pisa2025-rozlozeni.csv) jsou výukový výběr skutečných agregací PISA 2025 publikovaných OECD. [pisa2025-cesko-druhy-skol.csv](pisa2025-cesko-druhy-skol.csv) obsahuje české výsledky podle druhu školy přepsané z grafů národní zprávy ČŠI. Skóre a přírodovědné podíly byly převzaty 5. listopadu 2026; podíly pro čtení a matematiku 6. listopadu 2026. Nejde o úplnou světovou databázi ani mikrodata.
 
-CSV používají UTF-8, čárku mezi poli a desetinnou tečku. Hlavička je na prvním řádku. Publikované podíly v procentech jsou převedeny na desetinná čísla: 21,3 % je uloženo jako 0.213. Skóre a publikované změny jsou převzaty v zaokrouhlené podobě. Ze změn nelze přesně rekonstruovat nezaokrouhlené výsledky roku 2022.
+CSV používají UTF-8, čárku mezi poli a desetinnou tečku. Hlavička je na prvním řádku. Podíly jsou po zaokrouhlení na jedno desetinné místo převedeny z procent na zlomky: 21,3 % je uloženo jako 0.213. Skóre a publikované změny jsou převzaty v zaokrouhlené podobě. Ze změn nelze přesně rekonstruovat nezaokrouhlené výsledky roku 2022.
 
 ## Společná pole
 
@@ -29,16 +29,20 @@ CSV používají UTF-8, čárku mezi poli a desetinnou tečku. Hlavička je na p
 | `oecd_skore` | Publikovaná reference OECD pro tutéž oblast a cyklus, opakovaná záměrně u každé země |
 | `zmena_2022_2025` | Publikovaný rozdíl mezi odhady 2025 a 2022, v bodech; u B-S-J-Z prázdný, nikoli nula |
 
-## Pole tabulky Prirodni_vedy
+## Pole tabulky Rozlozeni
 
-11 datových řádků: deset zemí a reference OECD. Klíč: `zeme + cyklus + oblast + populace`. Pouze přírodní vědy; B-S-J-Z chybí, protože ověřené podíly nemáme.
+33 datových řádků: deset zemí a reference OECD ve třech oblastech. Klíč: `zeme + cyklus + oblast + populace`. B-S-J-Z chybí, protože pro tento region nemáme ve výběru ověřené podíly. `skore` pro každou kombinaci odpovídá tabulce `Vysledky`; soubory v reportu nespojujte do jedné tabulky, protože byste stejné skóre zdvojili.
 
 | Pole | Význam |
 | --- | --- |
-| `podil_pod_2` | Publikovaný podíl pod základní úrovní 2, od 0 do 1 |
-| `podil_5_6` | Publikovaný podíl na úrovních 5 a 6, od 0 do 1 |
+| `podil_pod_2` | Podíl žáků pod základní úrovní 2, od 0 do 1 |
+| `podil_2_4` | Dopočtený podíl na úrovních 2 až 4, od 0 do 1 |
+| `podil_5_6` | Podíl žáků na úrovních 5 a 6, od 0 do 1 |
 
-Ve výuce z nich odvodíte `podil_2_4 = 1 - podil_pod_2 - podil_5_6`. Dopočet vychází ze zaokrouhlených vstupů. Skóre, reference, změny a podíly se nesčítají přes země nebo oblasti. Average zachová jeden konkrétní odhad při správném filtru; nezajišťuje automaticky správný průměr populace.
+Podíly pro matematiku a čtení jsou součty příslušných úrovní z [tabulek OECD I.B1.2a.11 a I.B1.2a.12](https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en/full-report/results-for-countries-and-economies_33854635.html) ([XLSX OECD](https://stat.link/mrq53f)). Přírodovědné podíly z profilů OECD se po zaokrouhlení shodují s tabulkou I.B1.2a.10. Prostřední skupina je ve všech oblastech dopočtena jako `1 - podil_pod_2 - podil_5_6`, proto součet tří sloupců v každém řádku činí 100 %. Drobné rozdíly proti součtu nezaokrouhlených podílů jednotlivých úrovní jsou možné. Skóre, reference, změny a podíly se nesčítají přes země nebo oblasti. Average zachová jeden konkrétní odhad při správném filtru; nezajišťuje automaticky správný průměr populace.
+
+Pokud už máte starý list `Prirodni_vedy`, nahraďte jej novým CSV jako list `Rozlozeni` a v reportu obnovte nebo znovu připojte příslušný datový zdroj. Oba listy současně nepoužívejte jako dvě verze téhož rozložení.
+Původní [přírodovědný CSV](pisa2025-prirodni-vedy.csv) zůstává dostupný kvůli starším odkazům, ale další výuka používá společný soubor `pisa2025-rozlozeni.csv`.
 
 ## Pole tabulky Druhy_skol_CR
 
