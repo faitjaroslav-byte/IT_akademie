@@ -24,3 +24,7 @@ Kurz obsahuje čtyři kompletní scénáře:
 | Ranní briefing | Plánované flow připraví stručný přehled aktuálních zpráv. |
 
 Začněte stránkou [Přehled kurzu](workspace-studio/index.md).
+
+## Druhý kurz: Looker Studio
+
+[Looker Studio: Česko a svět v PISA 2025](looker-studio/index.md) vede od přípravy dat v Google Sheets k interaktivnímu reportu. Obsahuje publikované výsledky deseti zemí, čtyř čínských oblastí jako jednoho regionu a českých patnáctiletých podle pěti druhů škol. Součástí jsou návody na datové pohledy a manuál pro učitele.

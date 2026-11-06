@@ -52,3 +52,15 @@ nav:
       - 5. Vyhodnocení retrospektivy: workspace-studio/05-retrospektiva.md
       - 6. Ranní briefing: workspace-studio/06-ranni-briefing.md
       - 7. Testování a provoz: workspace-studio/07-testovani-a-provoz.md
+  - Looker Studio:
+      - Přehled kurzu: looker-studio/index.md
+      - 1. PISA a interpretace dat: looker-studio/01-pisa-a-interpretace.md
+      - 2. Příprava dat: looker-studio/02-priprava-dat.md
+      - 3. První report krok za krokem: looker-studio/03-prvni-report.md
+      - 4. Srovnání zemí a oblastí: looker-studio/04-srovnani.md
+      - 5. Mapa a interaktivní filtry: looker-studio/05-mapa-a-filtry.md
+      - 6. Změny a rozložení výsledků: looker-studio/06-zmeny-a-rozlozeni.md
+      - 7. Zaměření na střední školy: looker-studio/07-stredni-skoly.md
+      - 8. Manuál pro učitele: looker-studio/08-manual-pro-ucitele.md
+      - 9. Nejistota a mikrodata: looker-studio/09-nejistota-a-mikrodata.md
+      - Data a datový slovník: looker-studio/data/README.md

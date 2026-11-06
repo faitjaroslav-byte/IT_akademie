@@ -1,0 +1,28 @@
+kod_programu,popis_programu,cyklus,oblast,skore,se_skore,n_zaku,vazena_populace
+203001,Czech Republic: Basic school,2025,Matematika,447.952,2.974,3402,51750.8
+203001,Czech Republic: Basic school,2025,Čtení,436.027,2.925,3402,51750.8
+203001,Czech Republic: Basic school,2025,Přírodní vědy,459.016,2.955,3402,51750.8
+203002,Czech Republic: 8-year gymnasium or conservatory (lower secondary),2025,Matematika,577.935,9.989,543,4005.9
+203002,Czech Republic: 8-year gymnasium or conservatory (lower secondary),2025,Čtení,554.346,9.601,543,4005.9
+203002,Czech Republic: 8-year gymnasium or conservatory (lower secondary),2025,Přírodní vědy,586.557,10.781,543,4005.9
+203003,Czech Republic: 6-year gymnasium (lower secondary),2025,Matematika,556.671,14.488,152,1153.3
+203003,Czech Republic: 6-year gymnasium (lower secondary),2025,Čtení,544.249,12.964,152,1153.3
+203003,Czech Republic: 6-year gymnasium (lower secondary),2025,Přírodní vědy,573.755,13.252,152,1153.3
+203004,Czech Republic: 8-year gymnasium or conservatory (upper secondary),2025,Matematika,600.373,10.405,597,4295.2
+203004,Czech Republic: 8-year gymnasium or conservatory (upper secondary),2025,Čtení,583.496,9.469,597,4295.2
+203004,Czech Republic: 8-year gymnasium or conservatory (upper secondary),2025,Přírodní vědy,608.086,10.027,597,4295.2
+203005,Czech Republic: 6-year gymnasium (upper secondary),2025,Matematika,587.402,13.001,164,1261.1
+203005,Czech Republic: 6-year gymnasium (upper secondary),2025,Čtení,575.224,11.978,164,1261.1
+203005,Czech Republic: 6-year gymnasium (upper secondary),2025,Přírodní vědy,600.740,11.417,164,1261.1
+203006,Czech Republic: 4-year gymnasium,2025,Matematika,570.382,6.536,974,8615.1
+203006,Czech Republic: 4-year gymnasium,2025,Čtení,563.589,5.936,974,8615.1
+203006,Czech Republic: 4-year gymnasium,2025,Přírodní vědy,582.317,5.917,974,8615.1
+203007,Czech Republic: Vocational/technical secondary school with maturita (school-leaving exam),2025,Matematika,491.717,5.207,1799,30405.0
+203007,Czech Republic: Vocational/technical secondary school with maturita (school-leaving exam),2025,Čtení,491.800,5.224,1799,30405.0
+203007,Czech Republic: Vocational/technical secondary school with maturita (school-leaving exam),2025,Přírodní vědy,510.098,4.898,1799,30405.0
+203009,Czech Republic: Vocational/technical secondary school without maturita (school-leaving exam),2025,Matematika,403.984,5.673,732,9424.5
+203009,Czech Republic: Vocational/technical secondary school without maturita (school-leaving exam),2025,Čtení,391.270,6.788,732,9424.5
+203009,Czech Republic: Vocational/technical secondary school without maturita (school-leaving exam),2025,Přírodní vědy,412.660,5.548,732,9424.5
+203010,Czech Republic: Basic special/practical school,2025,Matematika,358.536,18.118,79,1623.6
+203010,Czech Republic: Basic special/practical school,2025,Čtení,352.635,14.971,79,1623.6
+203010,Czech Republic: Basic special/practical school,2025,Přírodní vědy,388.648,17.384,79,1623.6
