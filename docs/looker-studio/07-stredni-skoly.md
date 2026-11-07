@@ -7,7 +7,7 @@
 
 ## Co čísla popisují
 
-[Národní zpráva ČŠI PISA 2025](https://csi.gov.cz/CSICR/media/Prilohy/2024_p%C5%99%C3%ADlohy/Dokumenty/PISA-2025_final.pdf) publikuje průměrná skóre patnáctiletých žáků podle pěti českých druhů škol. Grafy 2.1.14, 2.3.3 a 2.4.4 pokrývají přírodní vědy, čtení a matematiku. Hodnoty jsme přepsali do samostatného [CSV](data/pisa2025-cesko-druhy-skol.csv). Nejsou to výsledky všech žáků středních škol, ale patnáctiletých v jednotlivých kategoriích; zahrnuta je i základní škola.
+[Národní zpráva ČŠI PISA 2025](https://csi.gov.cz/CSICR/media/Prilohy/2024_p%C5%99%C3%ADlohy/Dokumenty/PISA-2025_final.pdf) publikuje průměrná skóre patnáctiletých žáků podle pěti českých druhů škol. Grafy 2.1.14, 2.3.3 a 2.4.4 pokrývají přírodní vědy, čtení a matematiku. Hodnoty roku 2025 jsou v jediné [tabulce českých druhů škol](data/pisa-cesko-druhy-skol.csv) spolu se staršími cykly. Nejsou to výsledky všech žáků středních škol, ale patnáctiletých v jednotlivých kategoriích; zahrnuta je i základní škola.
 
 | Druh školy | Přírodní vědy | Čtení | Matematika |
 | --- | ---: | ---: | ---: |
@@ -23,16 +23,28 @@ Porovnávejte skupiny především v rámci stejné oblasti. Skóre různých ob
 
 ## Pohled 9: druhy škol v ČR
 
-1. V reportu zvolte **Zdroje / Resource → Spravovat přidané zdroje dat** a připojte list `Druhy_skol_CR` ze stejné tabulky Google Sheets. Zdroj nazvěte `PISA25_Druhy_skol_CR`.
+1. V reportu zvolte **Zdroje / Resource → Spravovat přidané zdroje dat** a připojte list `Druhy_skol_CR` ze stejné tabulky Google Sheets. Zdroj nazvěte `PISA_Druhy_skol_CR`. Je to třetí a poslední základní zdroj.
 2. Ověřte typ `skore` jako číslo a jeho agregaci Average. `druh_skoly` a `oblast` jsou textové dimenze. Nepoužívejte součet skóre.
-3. Vytvořte stránku `Druhy škol v ČR` a vložte kontingenční tabulku. Řádky: `druh_skoly`, sloupce: `oblast`, metrika: `skore` (Average).
+3. Vytvořte stránku `Druhy škol v ČR` a vložte kontingenční tabulku. Řádky: `druh_skoly`, sloupce: `oblast`, metrika: `skore` (Average). Nastavte pevný filtr `cyklus = 2025`.
 4. Vypněte součty řádků a sloupců. Tabulka má pět řádků a tři sloupce hodnot. Zkontrolujte 595 u víceletého gymnázia v přírodních vědách a 404 u SOU v matematice.
-5. Vedle tabulky vložte skupinový pruhový graf, který používá `druh_skoly` jako dimenzi, `oblast` jako rozkladovou dimenzi a `skore` jako metriku. Ponechte hodnoty čitelné a popisek osy `body PISA`.
+5. Vedle tabulky vložte skupinový pruhový graf, který používá `druh_skoly` jako dimenzi, `oblast` jako rozkladovou dimenzi a `skore` jako metriku. Nastavte mu také filtr `cyklus = 2025`. Ponechte hodnoty čitelné a popisek osy `body PISA`.
 6. Přidejte volič oblasti pouze pro tento zdroj, pokud chcete detailní graf jedné oblasti. Po výběru Čtení ověřte ZŠ 436 a čtyřleté gymnázium 564.
 7. Pod graf napište „Patnáctiletí žáci podle druhu školy v ČR, PISA 2025. Bodové odhady z grafů ČŠI 2.1.14, 2.3.3 a 2.4.4; bez standardních chyb v přiloženém výběru.“
 
 !!! warning "Jak čísla číst"
     Rozdíly mezi druhy škol jsou popisné. Odráží také výběr žáků do vzdělávacích drah a jejich sociální zázemí. Z grafu nevyvozujte, že právě druh školy rozdíl způsobil, ani že každá škola daného druhu dosáhne uvedeného průměru.
+
+## Navazující pohled: vývoj podle druhu školy
+
+Tentýž zdroj `PISA_Druhy_skol_CR` obsahuje také roky 2015, 2018 a 2022. Roky 2015 a 2018 jsou publikované odhady ČŠI; rok 2022 je vážený výpočet z [národní žákovské databáze ČŠI](https://csicr.cz/cz/Mezinarodni-setreni/PISA/Datove-soubory-a-dotazniky/PISA-2022) pomocí všech deseti plausible values. Podrobný původ každého řádku je v [datovém slovníku](data/README.md#vysledky-ceskych-druhu-skol).
+
+1. Vložte **nový** graf ze zdroje `PISA_Druhy_skol_CR` a ověřte typ `datum_cyklu` jako Date. Základní graf s filtrem 2025 ponechte beze změny.
+2. Na nové stránce `Trendy druhů škol v ČR` vložte **Časovou řadu**. Dimenze: `datum_cyklu`, metrika: `skore` (Average), rozkladová dimenze: `druh_skoly`.
+3. Nastavte filtr `oblast = Přírodní vědy`. Zobrazte značky bodů a ponechte v legendě všech pět kategorií včetně ZŠ. Název grafu: `Přírodní vědy podle druhu školy, ČR 2015–2025`.
+4. Zkontrolujte víceleté gymnázium: **602, 600, 605, 595** bodů. SOU bez maturity: **413, 423, 417, 413** bodů. V roce 2022 je přepočtená hodnota z národního souboru, ostatní jsou převzaté ze zpráv.
+5. Duplikujte graf pro `Čtení` a `Matematika`. U každé kopie změňte nejen filtr, ale i název. Nemíchejte tři oblasti do jedné řady ani nepočítejte prostý průměr přes pět druhů škol.
+
+Čáry spojují výsledky **různých skupin patnáctiletých v různých letech**, nesledují pokrok týchž žáků ani konkrétní školy. Školní kategorie jsou národní české členění; bez další harmonizace je nelze porovnávat s typy škol v jiných zemích. V této výukové tabulce nejsou standardní chyby školních skupin, proto z křivek nevyvozujte statisticky významnou změnu.
 
 ## Pro mezinárodní členění podle škol
 

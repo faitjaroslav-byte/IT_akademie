@@ -1,83 +1,73 @@
 # Data a datový slovník
 
-## Co soubory obsahují
+## Tři zdroje pro celý kurz
 
-[pisa2025-vysledky.csv](pisa2025-vysledky.csv) a [pisa2025-rozlozeni.csv](pisa2025-rozlozeni.csv) jsou výukový výběr skutečných agregací PISA 2025 publikovaných OECD. [pisa2025-cesko-druhy-skol.csv](pisa2025-cesko-druhy-skol.csv) obsahuje české výsledky podle druhu školy přepsané z grafů národní zprávy ČŠI. Skóre a přírodovědné podíly byly převzaty 5. listopadu 2026; podíly pro čtení a matematiku 6. listopadu 2026. Nejde o úplnou světovou databázi ani mikrodata.
+Pro základní report PISA 2025 i trendy 2015–2025 importujte **pouze tyto tři CSV**, každé do jednoho listu Google Sheets. Starší snímky za samotný rok 2025 a zvláštní trendové kopie už nejsou potřeba.
 
-CSV používají UTF-8, čárku mezi poli a desetinnou tečku. Hlavička je na prvním řádku. Podíly jsou po zaokrouhlení na jedno desetinné místo převedeny z procent na zlomky: 21,3 % je uloženo jako 0.213. Skóre a publikované změny jsou převzaty v zaokrouhlené podobě. Ze změn nelze přesně rekonstruovat nezaokrouhlené výsledky roku 2022.
+| List | Soubor | Datových řádků | Klíč |
+| --- | --- | ---: | --- |
+| `Vysledky` | [pisa-vysledky.csv](pisa-vysledky.csv) | 141 | `zeme + cyklus + oblast + populace` |
+| `Rozlozeni` | [pisa-rozlozeni.csv](pisa-rozlozeni.csv) | 141 | `zeme + cyklus + oblast + populace` |
+| `Druhy_skol_CR` | [pisa-cesko-druhy-skol.csv](pisa-cesko-druhy-skol.csv) | 60 | `zeme + cyklus + oblast + druh_skoly` |
+
+První dvě tabulky obsahují deset vybraných zemí × čtyři cykly × tři oblasti, region B-S-J-Z jen v letech 2018 a 2025, stálou referenci 35 zemí OECD ve všech cyklech a běžný průměr OECD pouze v roce 2025. Školní tabulka obsahuje pět českých druhů škol × čtyři cykly × tři oblasti. Nejde o úplnou světovou databázi ani o individuální žáky. CSV jsou v UTF-8, oddělovačem je čárka a desetinným znakem tečka.
 
 ## Společná pole
 
-| Pole | Význam a pravidlo |
+| Pole | Význam |
 | --- | --- |
-| `zeme` | Český název země, označení regionu B-S-J-Z nebo Průměr OECD |
-| `iso3` | ISO3 pro deset zemí; pro B-S-J-Z a OECD prázdné |
-| `typ` | Zeme / Region / Reference; filtr mapy a národních srovnání používá Zeme |
-| `cyklus` | 2025, rok šetření |
-| `oblast` | Matematika / Čtení / Přírodní vědy |
-| `populace` | Všichni patnáctiletí v cílové populaci PISA, ne pouze SŠ |
-| `skore` | Publikovaný bodový odhad na škále dané oblasti |
-| `zdroj_url` | Profil OECD, ze kterého je údaj převzat |
-| `overeno` | Datum kontroly zdroje; není rokem měření |
+| `zeme`, `iso3` | Český popisek entity a ISO3 pro deset zemí; region a reference nemají ISO3 |
+| `typ` | `Zeme`, `Region`, `Reference` (běžný průměr OECD 2025), `Reference_stala` (stálých 35 zemí); ve školní tabulce není |
+| `cyklus` | Rok měření: 2015, 2018, 2022, 2025 |
+| `datum_cyklu` | Technické datum 1. ledna příslušného roku pro skutečné rozestupy na časové ose; **není to den testování** |
+| `oblast` | Matematika, Čtení, Přírodní vědy |
+| `populace` | Mezinárodní tabulky: patnáctiletí v cílové populaci PISA; školní tabulka: patnáctiletí žáci daného druhu školy |
+| `skore` | Zaokrouhlený bodový odhad výkonu, nikoli procento ani školní známka |
+| `zdroj_url` | Odkaz na původ konkrétního řádku |
 
-## Pole tabulky Vysledky
+Rok 2018 až 2022 je **čtyřletý interval**. Nikdy neprůměrujte skóre přes roky, oblasti nebo země. Původní datové zdroje mají odlišnou populaci od české školní tabulky.
 
-36 datových řádků: deset zemí, jeden region a jedna reference × tři oblasti. Klíč: `zeme + cyklus + oblast + populace`.
+## Výsledky zemí
+
+Skóre a `se_skore` pro všechny čtyři cykly jsou z [trendových tabulek OECD I.B1.2a.36–38](https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en/full-report/results-for-countries-and-economies_33854635.html) ([XLSX OECD](https://stat.link/mrq53f)). Standardní chyba `se_skore` se vztahuje k **jednomu** odhadu; není chybou rozdílu dvou let. Významnost trendu ověřujte v publikovaných testech OECD.
 
 | Pole | Význam |
 | --- | --- |
-| `oecd_skore` | Publikovaná reference OECD pro tutéž oblast a cyklus, opakovaná záměrně u každé země |
-| `zmena_2022_2025` | Publikovaný rozdíl mezi odhady 2025 a 2022, v bodech; u B-S-J-Z prázdný, nikoli nula |
+| `oecd_skore` | Běžný průměr OECD pro stejnou oblast **roku 2025**, opakovaný u všech zemí a regionu pro jednoduchý výpočet rozdílu; v letech 2015–2022 a u stálé reference prázdný |
+| `zmena_2022_2025` | Publikovaná změna 2022–2025 v bodech, jen na řádcích roku 2025; u B-S-J-Z a stálé reference prázdná, nikdy nula jako náhrada chybějících dat |
+| `se_skore` | Standardní chyba bodového odhadu v bodech |
 
-## Pole tabulky Rozlozeni
+Průměr `Průměr OECD (stálých 35)` je časová řada se stejným složením zemí. **Není totožný** s běžným `Průměr OECD` pro rok 2025: například v přírodních vědách mají 484, resp. 482 bodů. Pro trendový graf použijte stálou referenci; pro základní graf roku 2025 běžnou. `oecd_skore` ze starších cyklů záměrně nevyplňujeme smíšeným průměrem.
 
-33 datových řádků: deset zemí a reference OECD ve třech oblastech. Klíč: `zeme + cyklus + oblast + populace`. B-S-J-Z chybí, protože pro tento region nemáme ve výběru ověřené podíly. `skore` pro každou kombinaci odpovídá tabulce `Vysledky`; soubory v reportu nespojujte do jedné tabulky, protože byste stejné skóre zdvojili.
+## Rozložení výsledků
 
-| Pole | Význam |
-| --- | --- |
-| `podil_pod_2` | Podíl žáků pod základní úrovní 2, od 0 do 1 |
-| `podil_2_4` | Dopočtený podíl na úrovních 2 až 4, od 0 do 1 |
-| `podil_5_6` | Podíl žáků na úrovních 5 a 6, od 0 do 1 |
+Podíly pod úrovní 2 a na úrovni 5 nebo vyšší jsou z [tabulek OECD I.B1.2a.33–35](https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en/full-report/results-for-countries-and-economies_33854635.html). Jsou zaokrouhleny na jedno desetinné místo procenta a uloženy jako zlomky: **21,3 % = 0.213**. `podil_2_4` je dopočet `1 - podil_pod_2 - podil_5_6`, aby měl každý řádek přesně 100 %. Procentní podíly se nesčítají mezi zeměmi ani mezi roky.
 
-Podíly pro matematiku a čtení jsou součty příslušných úrovní z [tabulek OECD I.B1.2a.11 a I.B1.2a.12](https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en/full-report/results-for-countries-and-economies_33854635.html) ([XLSX OECD](https://stat.link/mrq53f)). Přírodovědné podíly z profilů OECD se po zaokrouhlení shodují s tabulkou I.B1.2a.10. Prostřední skupina je ve všech oblastech dopočtena jako `1 - podil_pod_2 - podil_5_6`, proto součet tří sloupců v každém řádku činí 100 %. Drobné rozdíly proti součtu nezaokrouhlených podílů jednotlivých úrovní jsou možné. Skóre, reference, změny a podíly se nesčítají přes země nebo oblasti. Average zachová jeden konkrétní odhad při správném filtru; nezajišťuje automaticky správný průměr populace.
+`skore` se v `Rozlozeni` opakuje pro možnost bodového grafu; odpovídá stejnému řádku ve `Vysledky`. Oba listy v reportu nespojujte do jedné tabulky, jinak můžete hodnoty zdvojit. Region B-S-J-Z má ve sjednocené tabulce ověřené podíly pro roky 2018 a 2025, ale v základním grafu zemí se zobrazuje odděleně.
 
-Pokud už máte starý list `Prirodni_vedy`, nahraďte jej novým CSV jako list `Rozlozeni` a v reportu obnovte nebo znovu připojte příslušný datový zdroj. Oba listy současně nepoužívejte jako dvě verze téhož rozložení.
-Původní [přírodovědný CSV](pisa2025-prirodni-vedy.csv) zůstává dostupný kvůli starším odkazům, ale další výuka používá společný soubor `pisa2025-rozlozeni.csv`.
+## Výsledky českých druhů škol
 
-## Pole tabulky Druhy_skol_CR
+Pole `druh_skoly` rozlišuje základní školu, víceleté a čtyřleté gymnázium, SOŠ s maturitou a SOU bez maturity. `zdroj_metoda` zaznamenává původ odhadu v každém cyklu:
 
-15 datových řádků: pět českých druhů škol × tři oblasti. Klíč: `zeme + cyklus + oblast + druh_skoly`. Pole `druh_skoly` rozlišuje základní školu, víceleté a čtyřleté gymnázium, SOŠ s maturitou a SOU bez maturity. Pole `zdroj_obrazek` uvádí číslo grafu národní zprávy: 2.1.14 (přírodní vědy), 2.3.3 (čtení), 2.4.4 (matematika). Pole `skore` je bodový odhad pro patnáctileté žáky daného druhu školy; standardní chyby a počty respondentů v tomto výběru nejsou. [Národní zpráva ČŠI PISA 2025](https://csi.gov.cz/CSICR/media/Prilohy/2024_p%C5%99%C3%ADlohy/Dokumenty/PISA-2025_final.pdf).
+- **2015:** tabulky 7.3–7.5 [národní zprávy ČŠI](https://csi.gov.cz/Csicr/media/Prilohy/PDF_el._publikace/Mezin%C3%A1rodn%C3%AD%20%C5%A1et%C5%99en%C3%AD/NZ_PISA_2015.pdf).
+- **2018:** tabulka 1 [školní zprávy PISA 2018 vytvořené ČŠI](https://www.gymzl.cz/wcd/articles/2019_2020/2020_02_pisa/gv58_sk_zpr.pdf), obsahující společné výsledky podle druhů škol.
+- **2022:** vážený průměr všech deseti plausible values pro každou oblast z [národní žákovské databáze ČŠI](https://csicr.cz/cz/Mezinarodni-setreni/PISA/Datove-soubory-a-dotazniky/PISA-2022), podle proměnné `Druh_skoly` a váhy `W_FSTUWT`. Kontrola výpočtu: publikované hodnoty matematiky jsou 457, 591, 568, 502 a 408 bodů.
+- **2025:** grafy 2.1.14, 2.3.3 a 2.4.4 [národní zprávy ČŠI](https://csi.gov.cz/CSICR/media/Prilohy/2024_p%C5%99%C3%ADlohy/Dokumenty/PISA-2025_final.pdf).
 
-## Zdroje jednotlivých zemí
+Školní skupiny představují **různé kohorty patnáctiletých žáků**, nikoli tytéž žáky v čase. Výsledky skupin ovlivňuje i jejich složení; nepřisuzujte rozdíly automaticky účinku školy. Školní tabulka nemá standardní chyby ani počty respondentů. Nevyvozujte z ní významnost malých změn a nesčítejte pět skupin do prostého celostátního průměru.
 
-| Země | Primární zdroj |
-| --- | --- |
-| Česko a reference OECD | [OECD Education GPS: CZE](https://gpseducation.oecd.org/CountryProfile?primaryCountry=CZE&topic=PI&treshold=10) |
-| Slovensko | [OECD Education GPS: SVK](https://gpseducation.oecd.org/CountryProfile?primaryCountry=SVK&topic=PI&treshold=10) |
-| Německo | [OECD Education GPS: DEU](https://gpseducation.oecd.org/CountryProfile?primaryCountry=DEU&topic=PI&treshold=10) |
-| Rakousko | [OECD Education GPS: AUT](https://gpseducation.oecd.org/CountryProfile?primaryCountry=AUT&topic=PI&treshold=10) |
-| Polsko | [OECD Education GPS: POL](https://gpseducation.oecd.org/CountryProfile?primaryCountry=POL&topic=PI&treshold=10) |
-| Estonsko | [OECD Education GPS: EST](https://gpseducation.oecd.org/CountryProfile?primaryCountry=EST&topic=PI&treshold=10) |
-| Finsko | [OECD Education GPS: FIN](https://gpseducation.oecd.org/CountryProfile?primaryCountry=FIN&topic=PI&treshold=10) |
-| Singapur | [OECD Education GPS: SGP](https://gpseducation.oecd.org/CountryProfile?primaryCountry=SGP&topic=PI) |
-| Jižní Korea | [OECD Education GPS: KOR](https://gpseducation.oecd.org/CountryProfile?primaryCountry=KOR&topic=PI) |
-| USA | [OECD Education GPS: USA](https://gpseducation.oecd.org/CountryProfile?primaryCountry=USA&topic=PI) |
-| B-S-J-Z (Čína) | [OECD PISA 2025, executive summary](https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en/full-report/executive-summary_3701b0ef.html) |
+## Chybějící hodnoty a kontrola
 
-Profily jsou průběžně aktualizované webové stránky. Před dalším školením ověřte, že stále zobrazují cyklus 2025. B-S-J-Z znamená Peking, Šanghaj, Ťiang-su a Če-ťiang, nikoli celou Čínu. OECD upozorňuje, že USA nesplnily některé výběrové standardy, proto jejich srovnání interpretujte opatrně. Přiložené CSV zůstávají výukovým snímkem s uvedeným datem převzetí.
+B-S-J-Z znamená Peking, Šanghaj, Ťiang-su a Če-ťiang, **ne celou Čínu**. [OECD uvádí](https://www.oecd.org/en/about/programmes/pisa/pisa-frequently-asked-questions-faqs.html), že v roce 2022 tam neproběhl sběr; v roce 2015 měly zúčastněné čínské oblasti jiné složení. Proto pro B-S-J-Z nejsou řádky 2015 a 2022. Nepřipojujte čáru přes chybějící rok bez vysvětlení. USA mají v [tabulkách OECD](https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en/full-report/results-for-countries-and-economies_33854635.html) upozornění na výběrové standardy; srovnání interpretujte opatrně.
 
-## Nejistota a další zpracování
-
-Ve třech základních výukových CSV výše nejsou standardní chyby, intervaly spolehlivosti ani individuální žáci. Rozpad podle druhu školy je pouze pro ČR. Z rozdílu bodových odhadů bez chyb netestujte statistickou významnost.
+Reprodukovatelný postup je v `project_docs/pisa_trends.py`. Používá oficiální [XLSX OECD](https://stat.link/mrq53f) a český žákovský SAV z [národní databáze ČŠI PISA 2022](https://csicr.cz/cz/Mezinarodni-setreni/PISA/Datove-soubory-a-dotazniky/PISA-2022); vyžaduje balíčky `openpyxl` a `pyreadstat`. Parametry `--oecd-xlsx` a `--csi-2022-sav` zadávají místní soubory, `--check` ověřuje uložená CSV bez přepsání. Surové žákovské soubory nejsou součástí Gitu.
 
 ## Rozšíření z veřejného žákovského souboru OECD
 
-Nové tabulky byly vypočteny ze souboru `CY09_MS_STU_PUF.sav` (PISA 2025 Public Use File) dne 6. listopadu 2026. Surová mikrodata nejsou součástí webu ani Gitu. Reprodukovatelný postup je v repozitáři v `project_docs/pisa2025_aggregate.py`. Výpočet používá finální žákovskou váhu `W_FSTUWT`, všech deset plausible values pro každou oblast a 80 replikačních vah `W_FSTURWT1` až `W_FSTURWT80`. Standardní chyba kombinuje Fayovu replikační a imputační varianci podle [metodiky OECD](https://www.oecd.org/en/about/programmes/pisa/how-to-prepare-and-analyse-the-pisa-database.html).
+Samostatná odborná kapitola používá tři **volitelné** tabulky vypočtené z `CY09_MS_STU_PUF.sav` (PISA 2025 Public Use File) dne 6. listopadu 2026. Nejsou součástí tří základních zdrojů. Reprodukovatelný postup je v `project_docs/pisa2025_aggregate.py`; surová mikrodata se nepublikují. Výpočet používá finální žákovskou váhu `W_FSTUWT`, všech deset plausible values a 80 replikačních vah `W_FSTURWT1` až `W_FSTURWT80`. Standardní chyba kombinuje Fayovu replikační a imputační varianci podle [metodiky OECD](https://www.oecd.org/en/about/programmes/pisa/how-to-prepare-and-analyse-the-pisa-database.html).
 
-- [pisa2025-mikrodata-zeme.csv](pisa2025-mikrodata-zeme.csv): 33 řádků, deset zemí a region B-S-J-Z × tři oblasti. Pole `kod` je kód PISA; `QCI` je B-S-J-Z, ne celá Čína. Neobsahuje průměr OECD.
-- [pisa2025-mikrodata-cr-druhy-skol.csv](pisa2025-mikrodata-cr-druhy-skol.csv): 15 řádků, pět českých skupin × tři oblasti. Pole `kody_programu` ukazuje přesné kódy `PROGN` použité při seskupení. Kategorie víceletých gymnázií zahrnuje také konzervatoř, protože tak zní původní kódy 203002 a 203004.
-- [pisa2025-mikrodata-cr-programy.csv](pisa2025-mikrodata-cr-programy.csv): detail jednotlivých českých kódů `PROGN`. Skupiny s méně než 30 platnými žáky jsou vynechány; hodnoty ostatních malých skupin interpretujte opatrně.
+- [pisa2025-mikrodata-zeme.csv](pisa2025-mikrodata-zeme.csv): deset zemí a B-S-J-Z × tři oblasti, bez průměru OECD. Kód `QCI` znamená B-S-J-Z, ne celou Čínu.
+- [pisa2025-mikrodata-cr-druhy-skol.csv](pisa2025-mikrodata-cr-druhy-skol.csv): pět českých skupin × tři oblasti; pole `kody_programu` ukazuje původní kódy `PROGN`.
+- [pisa2025-mikrodata-cr-programy.csv](pisa2025-mikrodata-cr-programy.csv): podrobnosti českých kódů `PROGN`; skupiny s méně než 30 platnými žáky jsou vynechány.
 
-`skore` je vážený průměr napříč deseti plausible values v bodech; `se_skore` standardní chyba v bodech; `n_zaku` nevážený počet žáků s platnými hodnotami; `vazena_populace` součet vah, nikoli počet respondentů. V Looker Studio nepřepočítávejte z těchto řádků průměr přes různé země nebo školní skupiny. Desetinné hodnoty umožňují kontrolu, ve výukovém grafu zobrazte skóre na celé body.
-
-Národní bodové odhady a chyby se po zaokrouhlení shodují s [přílohou národní zprávy ČŠI](https://csi.gov.cz/CSICR/media/Prilohy/2024_p%C5%99%C3%ADlohy/Dokumenty/PISA-2025_final.pdf). Výjimkou v českých školních kategoriích je například čtení u SOU bez maturity: přepočet z veřejného souboru pro `PROGN=203009` dává 391,270, zatímco graf ČŠI uvádí 392. Nezaměňujte tyto dvě verze dat a nepovažujte odchylku za chybu zaokrouhlení; může souviset s vymezením kategorie nebo verzí analytického souboru. Příčinu bez národního analytického kódu nelze potvrdit.
+`skore` je vážený průměr napříč plausible values, `se_skore` standardní chyba v bodech, `n_zaku` nevážený počet platných žáků a `vazena_populace` součet vah. Tyto nezaokrouhlené výpočty nezaměňujte s hodnotami přepsanými z grafů ČŠI. Například čtení u SOU bez maturity dává z veřejného souboru 391,270 bodu, zatímco graf ČŠI uvádí 392; příčina rozdílu bez národního analytického kódu není potvrzena.

@@ -2,57 +2,50 @@
 
 <div class="lesson-meta">
 <strong>Čas:</strong> 45 minut<br>
-<strong>Výstup:</strong> Tři čisté listy v Google Sheets se správně rozpoznanými čísly a jednoznačnými řádky.
+<strong>Výstup:</strong> Tři čisté listy v Google Sheets pro pohledy na rok 2025 i časové řady.
 </div>
 
-## Připravený datový výběr
+## Tři datové tabulky
 
-Stáhněte [výsledky](data/pisa2025-vysledky.csv), [rozložení ve třech oblastech](data/pisa2025-rozlozeni.csv) a [české druhy škol](data/pisa2025-cesko-druhy-skol.csv). Jedná se o publikované agregace OECD a ČŠI, nikoli o smyšlené žákovské záznamy. Výběr zahrnuje deset zemí z Evropy, Asie a Severní Ameriky, region B-S-J-Z a referenci OECD; nejde o úplnou světovou databázi. Podíly pro region B-S-J-Z v druhém souboru nejsou.
+Stáhněte [výsledky zemí](data/pisa-vysledky.csv), [rozložení ve třech oblastech](data/pisa-rozlozeni.csv) a [české druhy škol](data/pisa-cesko-druhy-skol.csv). Každou tabulku importujete **jen jednou**. Z týchž tří listů pak vytvoříte základní pohledy na rok 2025 i grafy vývoje v letech 2015, 2018, 2022 a 2025. Nejde o individuální žákovská data ani o úplnou světovou databázi.
 
-Dlouhá tabulka `Vysledky` má jeden řádek pro kombinaci **entita × cyklus × oblast × populace**. Pro deset zemí, region B-S-J-Z a referenci OECD ve třech oblastech obsahuje 36 řádků. Referenční skóre OECD je navíc v samostatném sloupci každého řádku, aby zůstalo k dispozici i po filtrování země.
-
-Tabulka `Rozlozeni` má 33 řádků: deset zemí a referenci OECD ve třech oblastech. V každém řádku jsou podíly pod úrovní 2, na úrovních 2–4 a na úrovních 5–6. Oblast je součástí klíče řádku; pro jeden graf vždy vyberte právě jednu oblast.
-
-Tabulka `Druhy_skol_CR` má 15 řádků: pět českých druhů škol ve třech oblastech. Čísla pocházejí z grafů národní zprávy ČŠI. Není to členění podle typu školy pro jiné země.
+`Vysledky` a `Rozlozeni` mají po **141 datových řádcích**. V každém je deset zemí ve čtyřech cyklech, region B-S-J-Z v letech 2018 a 2025, stálá reference OECD ve čtyřech cyklech a běžný průměr OECD pouze pro rok 2025. Klíčem řádku je **entita × cyklus × oblast × populace**. `Rozlozeni` obsahuje podíly pod úrovní 2, na úrovních 2–4 a na úrovni 5 nebo výše. `Druhy_skol_CR` má **60 datových řádků**: pět českých druhů škol × tři oblasti × čtyři cykly. Její populace zahrnuje patnáctileté žáky daného druhu školy, nikoli všechny středoškoláky.
 
 ## Import do Google Sheets krok za krokem
 
-1. Na Disku vytvořte novou Tabulku Google s názvem `PISA 2025 – kurz`.
-2. Otevřete **Soubor → Importovat → Nahrát** a vyberte první CSV.
-3. Zvolte vložení nového listu. Jako oddělovač vyberte **čárku**. Zkontrolujte, že se hlavičky rozdělily do samostatných sloupců.
-4. List přejmenujte na `Vysledky`.
-5. Druhé CSV importujte do dalšího listu a přejmenujte ho na `Rozlozeni`.
-6. Třetí CSV importujte do listu `Druhy_skol_CR`. Ověřte číslo například součtem dvou buněk se skóre. Pokud součet nefunguje, čísla jsou pravděpodobně text.
-7. CSV používá desetinnou tečku. Pokud místní nastavení tabulky čísla nepřevede, nastavte pro import **Soubor → Nastavení → Národní prostředí → Spojené státy**, import zopakujte a ověřte čísla. České popisky v datech zůstanou zachovány.
-8. Ukotvěte první řádek a zapněte filtr. Nepřidávejte nad hlavičku další nadpis, součtový řádek ani sloučené buňky.
+1. Na Disku vytvořte novou Tabulku Google s názvem `PISA 2015–2025 – kurz`.
+2. Otevřete **Soubor → Importovat → Nahrát** a vyberte `pisa-vysledky.csv`. Importujte jej jako nový list, oddělovač nastavte na **čárku** a list přejmenujte na `Vysledky`.
+3. Stejně importujte `pisa-rozlozeni.csv` do listu `Rozlozeni` a `pisa-cesko-druhy-skol.csv` do listu `Druhy_skol_CR`.
+4. CSV používají desetinnou tečku. Pokud se čísla načtou jako text, nastavte **Soubor → Nastavení → Národní prostředí → Spojené státy** a import zopakujte. České popisky zůstanou zachovány.
+5. Ukotvěte první řádek a zapněte filtr. Nepřidávejte nad hlavičku další nadpis, součtový řádek ani sloučené buňky.
+6. Zkontrolujte `cyklus` jako celé číslo, `skore` jako číslo, podíly jako procenta a `datum_cyklu` jako datum. U posledního pole případně zvolte **Formát → Číslo → Datum**; v Data Studiu nastavte typ **Date**.
+
+`datum_cyklu` je technický zástupný den **1. ledna** daného roku pro správné rozestupy na časové ose. Nejde o skutečný den testování. Mezi cykly 2018 a 2022 jsou čtyři roky.
 
 ## Důležitá pole
 
-| Pole | Význam | Typ v Looker Studio |
+| Pole | Význam | Typ v Data Studiu |
 | --- | --- | --- |
-| `zeme` | Český popisek země či reference | Text |
-| `iso3` | ISO kód; u regionu a reference prázdný | Země / Country |
-| `typ` | `Zeme`, `Region` nebo `Reference` | Text |
-| `cyklus` | Rok šetření 2025 | Číslo, bez agregace |
+| `zeme`, `iso3`, `typ` | Popisek, kód země a druh entity (`Zeme`, `Region`, `Reference`, `Reference_stala`) | Text; `iso3` pro mapu jako Country |
+| `cyklus`, `datum_cyklu` | Rok šetření a technické datum pro časovou osu | Číslo bez agregace; Date |
 | `oblast` | Matematika, Čtení, Přírodní vědy | Text |
-| `skore` | Zaokrouhlený publikovaný odhad | Číslo |
-| `oecd_skore` | Reference pro tutéž oblast a cyklus | Číslo |
-| `zmena_2022_2025` | Publikovaná změna v bodech | Číslo |
-| `podil_pod_2` | Podíl pod úrovní 2, např. 0.213 | Procenta |
-| `podil_2_4` | Dopočtený podíl na úrovních 2–4 | Procenta |
-| `podil_5_6` | Podíl na úrovních 5 a 6 | Procenta |
+| `skore`, `se_skore` | Bodový odhad a jeho standardní chyba; druhé pole je jen ve `Vysledky` | Číslo, Average |
+| `oecd_skore` | Běžný průměr OECD pro stejnou oblast; vyplněn jen pro rok 2025 | Číslo, Average |
+| `zmena_2022_2025` | Publikovaná změna v bodech, vyplněná jen pro rok 2025, nikoli dopočet ze zaokrouhlených skóre | Číslo, Average |
+| `podil_pod_2`, `podil_2_4`, `podil_5_6` | Podíly žáků na úrovních, uložené jako zlomky | Procenta, Average |
+| `druh_skoly` | České členění škol, pouze v `Druhy_skol_CR` | Text |
 | `zdroj_url` | Dohledatelný původ výsledku | URL nebo text |
 
-Úplný popis tří souborů najdete v [datovém slovníku](data/README.md).
+Stálá referenční řada `Průměr OECD (stálých 35)` má `typ = Reference_stala`. **Není totožná** s běžným `Průměr OECD` pro rok 2025 (`typ = Reference`). V grafech vývoje použijte stálou řadu; v základním pohledu na rok 2025 běžnou referenci. Pole `oecd_skore` pro starší roky zůstává prázdné záměrně. Úplná metodika je v [datovém slovníku](data/README.md).
 
 ## Kontrola před připojením
 
-List `Vysledky` má 37 řádků včetně hlavičky. Při filtru `CZE` najdete tři řádky a pro přírodní vědy skóre 490. List `Rozlozeni` má 34 řádků včetně hlavičky a `Druhy_skol_CR` má 16 řádků včetně hlavičky. V `Rozlozeni` jsou pro ČR tři řádky. Podíl pod úrovní 2 činí v matematice **29,0 %**, ve čtení **27,0 %** a v přírodních vědách **21,3 %**. Poslední hodnota je v CSV zapsána jako **0.213**; číslo 21.3 formátované jako procento by zobrazilo 2130 %.
+Listy `Vysledky` a `Rozlozeni` mají každý **142 řádků včetně hlavičky**; `Druhy_skol_CR` má **61 řádků**. Při filtru `zeme = Česko`, `cyklus = 2025` jsou v každém z prvních dvou listů tři řádky, v českém školním listu patnáct.
 
-Kontrolní hodnoty vycházejí z [profilu ČR v OECD Education GPS](https://gpseducation.oecd.org/CountryProfile?primaryCountry=CZE&topic=PI&treshold=10) a [tabulek OECD I.B1.2a.10–12](https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en/full-report/results-for-countries-and-economies_33854635.html).
+Česká skóre v matematice pro cykly 2015, 2018, 2022 a 2025 jsou **492, 499, 487, 477**. V roce 2025 činí podíl pod úrovní 2 v matematice **29,0 %**, ve čtení **27,0 %** a v přírodních vědách **21,3 %**. Poslední podíl je v CSV zapsán jako `0.213`; číslo `21.3` formátované jako procento by zobrazilo 2130 %. Víceleté gymnázium má v matematice v uvedených cyklech **594, 596, 591, 586** bodů.
 
-## Pro vlastní rozšíření
+## Pravidlo pro grafy
 
-Přidáváte-li země, přebírejte údaje ze stejného cyklu a stejné populace. Chybějící údaj ponechte prázdný; nula znamená skutečnou nulovou hodnotu. Nedoplňujte standardní chybu odhadem. Celkové průměry, odhady pro podskupiny a jednotlivé žáky ukládejte do oddělených zdrojů s vlastní granularitou.
+V kapitolách 3–7 má každý graf označený **PISA 2025** pevný filtr `cyklus = 2025`. Nezrušte jej při kopírování grafu ani při přidání ovladače oblasti nebo země. Grafy trendu naopak používají všechna čtyři měření ze **stejných tří zdrojů**. Nikdy nesčítejte ani neprůměrujte skóre přes různé roky, země či oblasti. Chybějící rok B-S-J-Z není nula.
 
-Úkol: vysvětlete kolegovi, proč nelze sečíst tři řádky skóre ČR a výsledek označit jako celkový výkon země.
+Úkol: vysvětlete kolegovi, proč by karta ČR bez filtru `cyklus` mohla vypadat věrohodně, přestože průměruje čtyři různá šetření.

@@ -10,7 +10,7 @@ Jak si vedou čeští žáci ve srovnání se sousedními zeměmi? Co skrývá p
 
 Google v dubnu 2026 přejmenoval **Looker Studio na Data Studio**. Oba názvy proto můžete v návodech a rozhraní potkat. [Google: změna názvu služby](https://docs.cloud.google.com/data-studio/release-notes)
 
-Kurz pracuje s **PISA 2025**. OECD uvádí zveřejnění prvního svazku výsledků 8. září 2026. Přiložená data jsou malý výukový výběr publikovaných agregací, ověřený k 5. listopadu 2026. [OECD: PISA FAQ](https://www.oecd.org/en/about/programmes/pisa/pisa-frequently-asked-questions-faqs.html)
+Základní pohledy pracují s **PISA 2025**, časové řady přidávají cykly **2015, 2018 a 2022**. Vše vzniká ze stejných tří tabulek. OECD uvádí zveřejnění prvního svazku výsledků PISA 2025 dne 8. září 2026. Přiložená data jsou malý výukový výběr skutečných agregací, nikoli úplná databáze. [OECD: PISA FAQ](https://www.oecd.org/en/about/programmes/pisa/pisa-frequently-asked-questions-faqs.html)
 
 !!! important "Koho výsledky popisují"
     PISA sleduje patnáctileté žáky napříč typy škol. Mezinárodní report popisuje celou cílovou populaci vybraných zemí; samostatná tabulka z české národní zprávy ukazuje výsledky podle druhů škol v ČR. B-S-J-Z představuje čtyři oblasti Číny, nikoli celou Čínu. Podrobnosti najdete v [kapitole o středních školách](07-stredni-skoly.md).
@@ -30,6 +30,7 @@ Report bude mít pět stránek: **Česko v kontextu**, **Srovnání zemí**, **Z
 | Skládaný graf | Jaký podíl žáků má slabé nebo špičkové výsledky? | [Rozložení](06-zmeny-a-rozlozeni.md) |
 | Bodový graf | Jak se potkává průměr a podíl slabých výsledků? | [Rozložení](06-zmeny-a-rozlozeni.md) |
 | Graf podle druhu školy | Jak se liší výsledky českých patnáctiletých v pěti druzích škol? | [Střední školy](07-stredni-skoly.md) |
+| Časové řady | Jak se vyvíjelo skóre, podíly a výsledky českých druhů škol od roku 2015? | [Trendy zemí](06-zmeny-a-rozlozeni.md#navazujici-pohled-casova-rada-20152025), [trendy škol](07-stredni-skoly.md#navazujici-pohled-vyvoj-podle-druhu-skoly) |
 | Tabulka s nejistotou | Jak přesné jsou odhady z veřejných mikrodat? | [Nejistota a mikrodata](09-nejistota-a-mikrodata.md) |
 
 ## Postup kurzu
@@ -47,9 +48,9 @@ Volitelné pokračování: [nejistota a mikrodata](09-nejistota-a-mikrodata.md).
 
 ## Data ke stažení
 
-- [Výsledky podle země a oblasti, CSV](data/pisa2025-vysledky.csv): 36 řádků, deset zemí, B-S-J-Z a reference OECD ve třech oblastech.
-- [Rozložení ve třech oblastech, CSV](data/pisa2025-rozlozeni.csv): 33 řádků pro skládaný a bodový graf, včetně podílů pod úrovní 2, na úrovních 2–4 a 5–6.
-- [Česko podle druhu školy, CSV](data/pisa2025-cesko-druhy-skol.csv): 15 řádků, pět druhů škol ve třech oblastech.
+- [Výsledky podle země, oblasti a roku, CSV](data/pisa-vysledky.csv): 141 řádků včetně obou jasně rozlišených referencí OECD.
+- [Rozložení výsledků, CSV](data/pisa-rozlozeni.csv): 141 řádků s podíly pod úrovní 2, na úrovních 2–4 a na úrovni 5 nebo výše.
+- [Česko podle druhu školy, CSV](data/pisa-cesko-druhy-skol.csv): 60 řádků, pět druhů škol ve třech oblastech a čtyřech cyklech.
 - [Rozšíření vypočtené z veřejných mikrodat PISA 2025](data/README.md#rozsireni-z-verejneho-zakovskeho-souboru-oecd): země, české druhy škol a programy včetně standardních chyb a počtů žáků.
 - [Datový slovník a původ údajů](data/README.md).
 

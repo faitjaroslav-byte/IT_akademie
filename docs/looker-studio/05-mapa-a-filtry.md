@@ -9,10 +9,10 @@
 
 Mapa pomáhá orientaci v prostoru. Pro přesné srovnání ponechte vedle ní pruhový graf: velká země na mapě získává větší vizuální váhu, přestože plocha nevypovídá o výsledku žáků.
 
-1. Ve zdroji `PISA25_Vysledky` nastavte u `iso3` typ **Geo → Country / Země**.
+1. Ve zdroji `PISA_Vysledky` nastavte u `iso3` typ **Geo → Country / Země**.
 2. Na stránku `Srovnání zemí` vložte **Google Maps**, například vyplněnou mapu, pokud ji rozhraní nabízí. Alternativou je **Geo chart / Geografický graf**.
 3. Jako geografickou dimenzi použijte `iso3`, jako barevnou metriku `skore`, Average.
-4. Nastavte filtr AND: `typ = Zeme` a `oblast = Přírodní vědy`.
+4. Nastavte filtr AND: `typ = Zeme`, `cyklus = 2025` a `oblast = Přírodní vědy`.
 5. Zobrazte svět. Zapněte legendu a zkontrolujte ČR, Singapur, Jižní Koreu i USA.
 6. Vedle mapy napište „Bílé/nevyplněné země nejsou v datovém výběru“. Chybějící země nemají nulový výsledek.
 
@@ -22,9 +22,9 @@ ISO kód reference OECD i regionu B-S-J-Z je záměrně prázdný; ani jedno nen
 
 Pevný filtr oblasti se musí před přidáním přepínače odstranit, jinak se s ním výběr dostane do konfliktu.
 
-1. U mapy a hlavního pruhového grafu odstraňte pevné omezení `oblast = Přírodní vědy`. Ponechte `typ = Zeme`.
+1. U mapy a hlavního pruhového grafu odstraňte pevné omezení `oblast = Přírodní vědy`. Ponechte `typ = Zeme` **i** `cyklus = 2025`.
 2. Zvolte **Přidat ovládací prvek / Add a control → Rozbalovací seznam / Drop-down list**.
-3. Zdroj nastavte na `PISA25_Vysledky` a ovládací pole na `oblast`.
+3. Zdroj nastavte na `PISA_Vysledky` a ovládací pole na `oblast`.
 4. Zapněte jediný výběr a jako výchozí vyberte Přírodní vědy. Vypněte možnost vybrat vše, pokud ji rozhraní nabízí.
 5. Označte ovladač, mapu a hlavní pruhový graf a seskupte je pomocí **Uspořádat / Arrange → Seskupit / Group**.
 6. Kontingenční tabulku nechte mimo skupinu: jejím účelem je zobrazit všechny tři oblasti současně.
