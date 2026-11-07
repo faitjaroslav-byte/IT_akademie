@@ -32,7 +32,7 @@ Průměr zde pouze zachovává hodnotu jednoho odpovídajícího řádku. Správ
 ## Pohled 1: karty ukazatelů
 
 1. První stránku pojmenujte `Česko v kontextu`.
-2. Přidejte graf typu **Karta skóre / Scorecard**.
+2. V režimu úprav otevřete **Přidat graf / Add a chart** a vyberte **Rychlý přehled / Scorecard** (karta s jedním velkým číslem). Pokud jej v nabídce nevidíte, přetáhněte číselné pole `skore` ze seznamu polí na prázdné místo plátna; Data Studio z něj vytvoří Scorecard. [Google: přidání grafu](https://docs.cloud.google.com/data-studio/add-charts-and-controls-to-your-report), [přetažení pole na plátno](https://docs.cloud.google.com/data-studio/configure-report-components)
 3. Nastavte metriku `skore`, agregaci Average a filtr `iso3 = CZE`, `cyklus = 2025`.
 4. Do stejného filtru přidejte další podmínku **AND**: `oblast = Matematika`.
 5. Kartu nadepište `ČR – matematika, PISA 2025` a zobrazte celé číslo.

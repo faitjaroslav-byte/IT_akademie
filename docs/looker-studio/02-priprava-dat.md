@@ -13,14 +13,16 @@ Stáhněte [výsledky zemí](data/pisa-vysledky.csv), [rozložení ve třech obl
 
 ## Import do Google Sheets krok za krokem
 
-1. Na Disku vytvořte novou Tabulku Google s názvem `PISA 2015–2025 – kurz`.
+1. Na Disku vytvořte novou Tabulku Google s názvem `PISA 2015–2025 – kurz`. **Ještě před importem** otevřete **Soubor → Nastavení → Obecné**. V rozbalovacím poli **Jazyk** (země tabulky; někdy označené jako národní prostředí) změňte **Česko** na **Spojené státy** a klikněte na **Uložit nastavení**. Položku **Jazyk zobrazení: Čeština** neměňte. CSV používají desetinnou tečku; při českém prostředí se například `2.09` ve sloupci `se_skore` může omylem načíst jako datum.
 2. Otevřete **Soubor → Importovat → Nahrát** a vyberte `pisa-vysledky.csv`. Importujte jej jako nový list, oddělovač nastavte na **čárku** a list přejmenujte na `Vysledky`.
 3. Stejně importujte `pisa-rozlozeni.csv` do listu `Rozlozeni` a `pisa-cesko-druhy-skol.csv` do listu `Druhy_skol_CR`.
-4. CSV používají desetinnou tečku. Pokud se čísla načtou jako text, nastavte **Soubor → Nastavení → Národní prostředí → Spojené státy** a import zopakujte. České popisky zůstanou zachovány.
+4. České popisky zůstanou zachovány. Po importu ověřte, že `se_skore` obsahuje čísla (například estonské přírodní vědy 2015: `2.09`) a podíly jsou číselné zlomky (například české přírodní vědy 2025: `0.213`), nikoli datum či text.
 5. Ukotvěte první řádek a zapněte filtr. Nepřidávejte nad hlavičku další nadpis, součtový řádek ani sloučené buňky.
 6. Zkontrolujte `cyklus` jako celé číslo, `skore` jako číslo, podíly jako procenta a `datum_cyklu` jako datum. U posledního pole případně zvolte **Formát → Číslo → Datum**; v Data Studiu nastavte typ **Date**.
 
 `datum_cyklu` je technický zástupný den **1. ledna** daného roku pro správné rozestupy na časové ose. Nejde o skutečný den testování. Mezi cykly 2018 a 2022 jsou čtyři roky.
+
+Pokud jste už CSV importovali s českým prostředím a některé hodnoty se změnily na datum, **nestačí pouze přepnout formát buňky na Číslo**: datum už má jinou podkladovou hodnotu. V poli **Jazyk** nastavte nejprve **Spojené státy** a postižený CSV importujte znovu jako nový list; chybný list pak nahraďte. Pokud jste jej již připojili do Data Studia, ověřte po výměně listu také typy polí a aktualizujte zdroj. [Google: nastavení národního prostředí tabulky](https://support.google.com/docs/answer/58515)
 
 ## Důležitá pole
 

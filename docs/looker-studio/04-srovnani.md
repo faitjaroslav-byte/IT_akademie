@@ -17,6 +17,8 @@ Všechny tři pohledy čerpají ze zdroje `PISA_Vysledky` a používají pevný 
 6. V nastavení osy ponechte počátek na nule. Pro detailnější rozdíly použijte samostatnou tabulku nebo graf odchylek.
 7. Nadpis změňte na `Přírodní vědy: bodové odhady ve vybraných zemích`.
 
+Pokud na stránce umístíte vedle sebe kopie grafu pro různé oblasti, kliknutí na pruh může vyfiltrovat stejnou zemi i v ostatních grafech. Jde o **křížové filtrování**, nikoli o změnu jejich pevných filtrů `oblast`. Pro samostatné srovnávací grafy jej vypněte u každého grafu: vyberte graf a v pravém panelu **Nastavení / Data → Interakce grafu → Křížové filtrování** přepněte na vypnuto. Již vybranou zemi zrušíte dalším kliknutím na pruh nebo resetem filtrů. [Google: křížové filtrování](https://docs.cloud.google.com/data-studio/chart-cross-filtering)
+
 Kontrola: deset pruhů, ČR 490, Estonsko 527 a Singapur 560. Vzájemné pořadí je pořadím bodových odhadů v tomto výběru, nikoli testem významnosti. [OECD: ČR](https://gpseducation.oecd.org/CountryProfile?primaryCountry=CZE&topic=PI&treshold=10), [Estonsko](https://gpseducation.oecd.org/CountryProfile?primaryCountry=EST&topic=PI&treshold=10), [Singapur](https://gpseducation.oecd.org/CountryProfile?primaryCountry=SGP&topic=PI).
 
 Otázka do výuky: jak se změní dojem z rozdílu po oříznutí osy například od 450? Proč musí být taková změna jasně označena?

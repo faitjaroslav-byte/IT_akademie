@@ -12,7 +12,7 @@ Tento pracovní materiál je uložen pouze v repozitáři. Není součástí pub
 
 Vyzkoušejte školní účet na Data Studio (dříve Looker Studio) a připojení Google Sheets. Pokud doména službu nepovoluje, ověřte přístup se správcem školy před školením. Připravte kopii tabulky se třemi listy podle [kapitoly 2](../docs/looker-studio/02-priprava-dat.md). Všechny tři listy obsahují cykly 2015, 2018, 2022 a 2025; pro základní grafy je nutný filtr `cyklus = 2025`. Lektor si dopředu vytvoří jeden referenční report podle následujícího postupu. Každý účastník pracuje se svou kopií dat.
 
-Před první hodinou otevřete všechny tři CSV z [přehledu kurzu](../docs/looker-studio/index.md), ověřte jejich oddělovač a desetinné hodnoty a připravte záložní kopii v Google Sheets. Ujistěte se, že máte oprávnění vytvářet a sdílet reporty, a rozhodněte, zda účastníci budou pracovat samostatně, nebo ve dvojicích. Referenční report používejte ke kontrole, ne jako náhradu jejich vlastní práce.
+Před první hodinou otevřete všechny tři CSV z [přehledu kurzu](../docs/looker-studio/index.md), ověřte jejich oddělovač a desetinné hodnoty a připravte záložní kopii v Google Sheets. Ještě před importem nastavte **Soubor → Nastavení → Obecné → Jazyk → Spojené státy**; **Jazyk zobrazení** může zůstat Čeština. Jinak se například `se_skore = 2.09` může načíst jako datum. Ujistěte se, že máte oprávnění vytvářet a sdílet reporty, a rozhodněte, zda účastníci budou pracovat samostatně, nebo ve dvojicích. Referenční report používejte ke kontrole, ne jako náhradu jejich vlastní práce.
 
 ## Přesný sled práce
 
@@ -84,6 +84,7 @@ Kontrolní hodnoty vycházejí z [OECD Education GPS: ČR](https://gpseducation.
 | Graf rozložení ukazuje průměr tří oblastí | Ovladač `oblast` nastavte na jediný výběr, výchozí Přírodní vědy, bez možnosti vybrat vše. |
 | Podíl je 2130 % | Zkontrolujte vstup 0.213; procentní formát násobí zobrazení stem. |
 | Číslo je text | Opravte import a desetinný oddělovač v Sheets, pak aktualizujte pole zdroje. |
+| `se_skore` nebo podíl se změnil na datum | V nastavení tabulky změňte pole Jazyk na Spojené státy a CSV znovu importujte; změna formátu již převedené buňky původní číslo neobnoví. |
 | Filtr vyprázdní graf | Hledejte konflikt pevného filtru a ovladače, zdroj nebo nesprávnou skupinu. |
 | Nový sloupec chybí | V editaci zdroje obnovte pole / Refresh fields. |
 | Mapa nezobrazuje zemi | Ověřte ISO3 a geografický typ Country. OECD ani region B-S-J-Z na mapu zemí nepatří. |

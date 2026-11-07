@@ -12,6 +12,8 @@ Pro základní report PISA 2025 i trendy 2015–2025 importujte **pouze tyto tř
 
 První dvě tabulky obsahují deset vybraných zemí × čtyři cykly × tři oblasti, region B-S-J-Z jen v letech 2018 a 2025, stálou referenci 35 zemí OECD ve všech cyklech a běžný průměr OECD pouze v roce 2025. Školní tabulka obsahuje pět českých druhů škol × čtyři cykly × tři oblasti. Nejde o úplnou světovou databázi ani o individuální žáky. CSV jsou v UTF-8, oddělovačem je čárka a desetinným znakem tečka.
 
+Před importem do Google Sheets nastavte u celé tabulky **Soubor → Nastavení → Obecné → Jazyk → Spojené státy**. Jde o zemi tabulky, nikoli o **Jazyk zobrazení**. V českém prostředí se některé hodnoty s desetinnou tečkou, například `se_skore = 2.09`, mohou změnit na datum. Postup opravy je v [kapitole 2](../02-priprava-dat.md#import-do-google-sheets-krok-za-krokem).
+
 ## Společná pole
 
 | Pole | Význam |
