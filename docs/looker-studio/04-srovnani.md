@@ -31,6 +31,7 @@ Otázka do výuky: jak se změní dojem z rozdílu po oříznutí osy napříkla
 4. Vypněte řádkové i sloupcové součty. Ani součet, ani průměr různých škál nechceme interpretovat jako celkový výkon.
 5. V panelu Style zapněte heatmapové zobrazení metriky, pokud je dostupné, případně přidejte podmíněné formátování barevnou škálou.
 6. Nechte zobrazit i číselné hodnoty. Barva pouze pomáhá orientaci.
+7. Tabulku nadepište `Skóre zemí podle oblasti, PISA 2025`.
 
 Kontrola: deset řádků a tři sloupce oblastí. Pole pro matematiku v ČR má 477. Porovnávejte primárně země **uvnitř stejného sloupce**. Shodná bodová hodnota v různých oblastech neznamená stejnou obtížnost nebo totožnou úroveň zvládnutí.
 
@@ -38,7 +39,7 @@ Tento pohled dobře odhaluje, proč jeden celkový žebříček skrývá různé
 
 ### Region B-S-J-Z
 
-Pokud chcete zahrnout čínská data, zkopírujte tabulku a vytvořte filtr zahrnující `typ = Zeme` nebo `typ = Region`; ponechte `cyklus = 2025`. Popisek musí znít `B-S-J-Z (Peking, Šanghaj, Ťiang-su, Če-ťiang)`, nikoli `Čína`. Region nepatří do mapy zemí ani do souhrnu národních výsledků. Podíly regionu jsou v tabulce `Rozlozeni` za roky 2018 a 2025, změna 2022–2025 ale chybí.
+Pokud chcete zahrnout čínská data, zkopírujte tabulku a vytvořte filtr zahrnující `typ = Zeme` nebo `typ = Region`; ponechte `cyklus = 2025`. Kopii nadepište `Skóre zemí a regionu B-S-J-Z podle oblasti, PISA 2025`. Popisek regionu musí znít `B-S-J-Z (Peking, Šanghaj, Ťiang-su, Če-ťiang)`, nikoli `Čína`. Region nepatří do mapy zemí ani do souhrnu národních výsledků. Podíly regionu jsou v tabulce `Rozlozeni` za roky 2018 a 2025, změna 2022–2025 ale chybí.
 
 ## Pohled 4: rozdíl proti OECD
 
@@ -62,4 +63,4 @@ Návod na vytvoření pole vychází z [dokumentace vypočtených polí](https:/
 
 ## Samostatná práce
 
-Zkopírujte srovnávací graf pro matematiku a čtení. U každého napište jednu přesnou větu s populací, cyklem a jednotkou. Potom vyberte větu, u které byste pro silnější závěr potřebovali standardní chyby nebo národní zprávu.
+Zkopírujte srovnávací graf pro matematiku a čtení. Kopie nadepište `Matematika: bodové odhady ve vybraných zemích` a `Čtení: bodové odhady ve vybraných zemích`. U každého napište jednu přesnou větu s populací, cyklem a jednotkou. Potom vyberte větu, u které byste pro silnější závěr potřebovali standardní chyby nebo národní zprávu.

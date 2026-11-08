@@ -13,7 +13,7 @@ Mapa pomáhá orientaci v prostoru. Pro přesné srovnání ponechte vedle ní p
 2. Na stránku `Srovnání zemí` vložte **Google Maps**, například vyplněnou mapu, pokud ji rozhraní nabízí. Alternativou je **Geo chart / Geografický graf**, ale ten nenabízí stejné interaktivní přibližování a posun mapy.
 3. Jako geografickou dimenzi použijte `iso3`, jako barevnou metriku `skore`, Average.
 4. Nastavte filtr AND: `typ = Zeme`, `cyklus = 2025` a `oblast = Přírodní vědy`.
-5. Zobrazte svět. Zapněte legendu a zkontrolujte ČR, Singapur, Jižní Koreu i USA. U **Google Maps** otevřete **Styl → Ovládací prvky mapy / Map controls** a zapněte **Povolit posun a přiblížení**, **Zobrazit ovládání přiblížení (+/−)** a **Zobrazit celou obrazovku**. V režimu zobrazení pak vyzkoušejte přiblížení Česka i Singapuru a návrat na výchozí pohled. [Google: ovládání mapy](https://docs.cloud.google.com/data-studio/google-maps-reference)
+5. Mapu nadepište `Skóre patnáctiletých podle země, PISA 2025` a zobrazte svět. Zapněte legendu a zkontrolujte ČR, Singapur, Jižní Koreu i USA. U **Google Maps** otevřete **Styl → Ovládací prvky mapy / Map controls** a zapněte **Povolit posun a přiblížení**, **Zobrazit ovládání přiblížení (+/−)** a **Zobrazit celou obrazovku**. V režimu zobrazení pak vyzkoušejte přiblížení Česka i Singapuru a návrat na výchozí pohled. [Google: ovládání mapy](https://docs.cloud.google.com/data-studio/google-maps-reference)
 6. Vedle mapy napište „Bílé/nevyplněné země nejsou v datovém výběru“. Chybějící země nemají nulový výsledek.
 
 ISO kód reference OECD i regionu B-S-J-Z je záměrně prázdný; ani jedno není celá země. Údaje pro mapu a vlastnosti geografických polí popisuje [Google Maps reference](https://docs.cloud.google.com/data-studio/google-maps-reference).
@@ -49,7 +49,13 @@ Rozsah filtru vychází z jeho zdroje dat a seskupení komponent. Po návratu do
 
 ## Filtr zemí
 
-Přidejte druhý rozbalovací seznam pro pole `zeme` a ponechte ho **mimo skupinu mapy** na úrovni stránky, aby výběr země působil na mapu i na všechny tři pruhové grafy. Umožněte vícenásobný výběr. Vyhledejte v něm nejprve Česko a Singapur bez klikání na malé plochy mapy; poté porovnejte například pouze ČR a Slovensko. Při resetu filtrů se musí znovu zobrazit deset zemí. Pokud chcete filtrovat země pouze na mapě, přidejte tento ovladač naopak do skupiny mapy.
+**Kliknutí přímo na zemi v mapě není totéž co výběr v rozbalovacím ovladači `zeme`.** Kliknutí do mapy používá křížové filtrování a u seskupené mapy neomezuje pruhové grafy mimo skupinu. Následující druhý ovladač je volitelný; pokud jej dosud nemáte, kontrola jeho chování níže se na váš report nevztahuje. [Google: rozsah skupin](https://docs.cloud.google.com/data-studio/apply-controls-to-specific-charts), [křížové filtrování](https://docs.cloud.google.com/data-studio/chart-cross-filtering)
+
+Přidejte druhý rozbalovací seznam pro pole `zeme` a ponechte ho **mimo skupinu mapy** na úrovni stránky. Jako zdroj nastavte `PISA_Vysledky` a umožněte vícenásobný výběr. **Ovladač stránky působí jen na grafy na téže stránce**: pokud máte tři pruhové grafy na jiné stránce než mapu, jejich nezměněný stav je správný a nesouvisí s křížovým filtrováním. Pro ovládání pruhů přidejte další dropdown `zeme` na jejich stránku. Pokud záměrně chcete jeden ovladač pro více stránek, použijte **Uspořádat → Nastavit pro celý report / Make Report-level**, ale zkontrolujte také ostatní stránky: například karty s pevným filtrem ČR budou při výběru jiné země prázdné. [Google: ovladače na všech stránkách](https://docs.cloud.google.com/data-studio/add-edit-controls)
+
+Teprve když ovladač a grafy leží na **stejné stránce** a používají stejný připojený `PISA_Vysledky`, očekávejte společné filtrování. Pokud se přesto změní jen mapa, porovnejte názvy zdrojů dat a pole `zeme`; u různých zdrojů Google Sheets mohou mít stejně pojmenovaná pole odlišná interní ID. [Google: filtry napříč zdroji](https://docs.cloud.google.com/data-studio/use-controls-across-data-sources)
+
+Vyhledejte v ovladači Česko a Singapur bez klikání na malé plochy mapy; poté porovnejte například pouze ČR a Slovensko. Při resetu filtrů se musí znovu zobrazit deset zemí. Pokud chcete filtrovat země pouze na mapě, přidejte tento ovladač naopak do skupiny mapy.
 
 U prvních tří karet ČR na jiné stránce ponechte pevné filtry. Nezměňte ovladače na úroveň celého reportu, pokud nechcete jejich účinek přenášet i tam. Zdroje `Vysledky` a `Rozlozeni` mají samostatné ovladače; shodný název pole sám nezaručuje filtrování přes oba zdroje.
 
@@ -58,8 +64,10 @@ U prvních tří karet ČR na jiné stránce ponechte pevné filtry. Nezměňte 
 | Akce | Očekávané chování |
 | --- | --- |
 | Vybrat matematiku v ovladači mapy | ČR na mapě ukazuje 477; tři pruhové grafy se nemění. |
-| Vybrat pouze ČR v ovladači země | Na mapě zůstane ČR a v každém pruhovém grafu jeden pruh; reference v `oecd_skore` se nezmění. |
-| Vrátit všechny země | V každém pruhovém grafu je deset zemí, nikoli region B-S-J-Z či reference OECD. |
+| Kliknout přímo na ČR v mapě | Změní se výběr v mapě; pruhové grafy mimo její skupinu zůstanou beze změny. |
+| Vybrat pouze ČR v **ovladači `zeme` na stránce mapy** | Na mapě zůstane ČR. Pruhové grafy na jiné stránce se nezmění. |
+| Vybrat pouze ČR v **ovladači `zeme` na stránce pruhových grafů** | V každém ze tří pruhových grafů na této stránce zůstane jeden pruh; reference v `oecd_skore` se nezmění. |
+| V ovladači `zeme` vrátit všechny země | Na příslušné stránce se obnoví deset zemí, nikoli region B-S-J-Z či reference OECD. |
 | Změnit oblast na mapě | Kontingenční tabulka mimo skupinu stále ukazuje tři oblasti. |
 | Vymazat výběr oblasti | Pokud rozhraní dovolí sloučit oblasti, opravte nastavení; průměr škál neinterpretujte. |
 

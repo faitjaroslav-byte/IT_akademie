@@ -26,6 +26,7 @@ Některé názvy položek závisí na jazyku a verzi rozhraní. Postup připojen
 2. V panelu nastavení nastavte dimenze `zeme`, `oblast` a metriku `skore` s agregací **Average**.
 3. V části **Filtr → Přidat filtr → Vytvořit filtr** zadejte dvě podmínky AND: `iso3 = CZE` a `cyklus = 2025`.
 4. Ověřte tři řádky: Matematika 477, Čtení 468, Přírodní vědy 490. [Zdroj OECD](https://gpseducation.oecd.org/CountryProfile?primaryCountry=CZE&topic=PI&treshold=10)
+5. Tabulku nadepište `Česko: skóre ve třech oblastech, PISA 2025`.
 
 Průměr zde pouze zachovává hodnotu jednoho odpovídajícího řádku. Správnou granularitu musíte hlídat i při použití Average. Pokud vidíte jedinou hodnotu místo tří, doplňte dimenzi `oblast`.
 
@@ -36,7 +37,7 @@ Průměr zde pouze zachovává hodnotu jednoho odpovídajícího řádku. Správ
 3. Nastavte metriku `skore`, agregaci Average a filtr `iso3 = CZE`, `cyklus = 2025`.
 4. Do stejného filtru přidejte další podmínku **AND**: `oblast = Matematika`.
 5. Kartu nadepište `ČR – matematika, PISA 2025` a zobrazte celé číslo.
-6. Kartu dvakrát zkopírujte. U kopií změňte podmínku oblasti a nadpis na Čtení a Přírodní vědy.
+6. Kartu dvakrát zkopírujte. U kopií změňte podmínku oblasti i nadpis na `ČR – čtení, PISA 2025` a `ČR – přírodní vědy, PISA 2025`.
 7. Pod karty vložte text: „Patnáctiletí napříč typy škol. Zaokrouhlené bodové odhady.“
 
 Výsledkem musí být 477, 468 a 490. Samotný filtr země nestačí: karta bez filtru oblasti či roku by průměrovala různé škály nebo cykly. Taková hodnota nemá zamýšlený význam.

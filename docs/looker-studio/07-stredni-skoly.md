@@ -25,9 +25,9 @@ Porovnávejte skupiny především v rámci stejné oblasti. Skóre různých ob
 
 1. V reportu zvolte **Zdroje / Resource → Spravovat přidané zdroje dat** a připojte list `Druhy_skol_CR` ze stejné tabulky Google Sheets. Zdroj nazvěte `PISA_Druhy_skol_CR`. Je to třetí a poslední základní zdroj.
 2. Ověřte typ `skore` jako číslo a jeho agregaci Average. `druh_skoly` a `oblast` jsou textové dimenze. Nepoužívejte součet skóre.
-3. Vytvořte stránku `Druhy škol v ČR` a vložte kontingenční tabulku. Řádky: `druh_skoly`, sloupce: `oblast`, metrika: `skore` (Average). Nastavte pevný filtr `cyklus = 2025`.
+3. Vytvořte stránku `Druhy škol v ČR` a vložte kontingenční tabulku s názvem `Skóre patnáctiletých podle druhu školy a oblasti, ČR 2025`. Řádky: `druh_skoly`, sloupce: `oblast`, metrika: `skore` (Average). Nastavte pevný filtr `cyklus = 2025`.
 4. Vypněte součty řádků a sloupců. Tabulka má pět řádků a tři sloupce hodnot. Zkontrolujte 595 u víceletého gymnázia v přírodních vědách a 404 u SOU v matematice.
-5. Vedle tabulky vložte skupinový pruhový graf, který používá `druh_skoly` jako dimenzi, `oblast` jako rozkladovou dimenzi a `skore` jako metriku. Nastavte mu také filtr `cyklus = 2025`. Ponechte hodnoty čitelné a popisek osy `body PISA`.
+5. Vedle tabulky vložte skupinový pruhový graf s názvem `Skóre podle druhu školy ve třech oblastech, ČR 2025`. Použijte `druh_skoly` jako dimenzi, `oblast` jako rozkladovou dimenzi a `skore` jako metriku. Nastavte mu také filtr `cyklus = 2025`. Ponechte hodnoty čitelné a popisek osy `body PISA`.
 6. Přidejte volič oblasti pouze pro tento zdroj, pokud chcete detailní graf jedné oblasti. Po výběru Čtení ověřte ZŠ 436 a čtyřleté gymnázium 564.
 7. Pod graf napište „Patnáctiletí žáci podle druhu školy v ČR, PISA 2025. Bodové odhady z grafů ČŠI 2.1.14, 2.3.3 a 2.4.4; bez standardních chyb v přiloženém výběru.“
 
@@ -38,11 +38,11 @@ Porovnávejte skupiny především v rámci stejné oblasti. Skóre různých ob
 
 Tentýž zdroj `PISA_Druhy_skol_CR` obsahuje také roky 2015, 2018 a 2022. Roky 2015 a 2018 jsou publikované odhady ČŠI; rok 2022 je vážený výpočet z [národní žákovské databáze ČŠI](https://csicr.cz/cz/Mezinarodni-setreni/PISA/Datove-soubory-a-dotazniky/PISA-2022) pomocí všech deseti plausible values. Podrobný původ každého řádku je v [datovém slovníku](data/README.md#vysledky-ceskych-druhu-skol).
 
-1. Vložte **nový** graf ze zdroje `PISA_Druhy_skol_CR` a ověřte typ `datum_cyklu` jako Date. Základní graf s filtrem 2025 ponechte beze změny.
-2. Na nové stránce `Trendy druhů škol v ČR` vložte **Časovou řadu**. Dimenze: `datum_cyklu`, metrika: `skore` (Average), rozkladová dimenze: `druh_skoly`.
+1. Na nové stránce `Trendy druhů škol v ČR` vložte **jeden nový graf typu Časová řada** ze zdroje `PISA_Druhy_skol_CR`. Ověřte typ `datum_cyklu` jako Date. Základní graf s filtrem 2025 ponechte beze změny.
+2. V novém grafu nastavte dimenzi `datum_cyklu`, metriku `skore` (Average) a rozkladovou dimenzi `druh_skoly`.
 3. Nastavte filtr `oblast = Přírodní vědy`. Zobrazte značky bodů a ponechte v legendě všech pět kategorií včetně ZŠ. Název grafu: `Přírodní vědy podle druhu školy, ČR 2015–2025`.
 4. Zkontrolujte víceleté gymnázium: **602, 600, 605, 595** bodů. SOU bez maturity: **413, 423, 417, 413** bodů. V roce 2022 je přepočtená hodnota z národního souboru, ostatní jsou převzaté ze zpráv.
-5. Duplikujte graf pro `Čtení` a `Matematika`. U každé kopie změňte nejen filtr, ale i název. Nemíchejte tři oblasti do jedné řady ani nepočítejte prostý průměr přes pět druhů škol.
+5. Duplikujte graf pro `Čtení` a `Matematika`. U kopií změňte filtr i název na `Čtení podle druhu školy, ČR 2015–2025` a `Matematika podle druhu školy, ČR 2015–2025`. Nemíchejte tři oblasti do jedné řady ani nepočítejte prostý průměr přes pět druhů škol.
 
 Čáry spojují výsledky **různých skupin patnáctiletých v různých letech**, nesledují pokrok týchž žáků ani konkrétní školy. Školní kategorie jsou národní české členění; bez další harmonizace je nelze porovnávat s typy škol v jiných zemích. V této výukové tabulce nejsou standardní chyby školních skupin, proto z křivek nevyvozujte statisticky významnou změnu.
 

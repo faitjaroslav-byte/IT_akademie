@@ -22,15 +22,15 @@ Pole `zmena_2022_2025` obsahuje publikovaný rozdíl pouze u roku 2025. Časová
 
 ## Navazující pohled: časová řada 2015–2025
 
-Po zvládnutí základního reportu použijte stejný list [Vysledky](data/pisa-vysledky.csv), tentokrát bez filtru `cyklus = 2025`. Skóre jednotlivých cyklů je převzaté přímo z [tabulek OECD](https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en/full-report/results-for-countries-and-economies_33854635.html), není dopočítané z publikované změny.
+Po zvládnutí základního reportu vytvořte **jeden nový graf typu Časová řada** ze stejného zdroje [Vysledky](data/pisa-vysledky.csv). Graf má ukázat všechny čtyři cykly, proto u něj nepoužívejte filtr `cyklus = 2025`. Skóre jednotlivých cyklů je převzaté přímo z [tabulek OECD](https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en/full-report/results-for-countries-and-economies_33854635.html), není dopočítané z publikované změny.
 
-1. Vytvořte **nový** graf ze zdroje `PISA_Vysledky`. Nekopírujte graf s pevným filtrem 2025, pokud jeho filtr sami neodstraníte.
-2. Vytvořte stránku `Trendy zemí`. Vložte graf typu **Časová řada**. Dimenze: `datum_cyklu` (Date, zobrazení po rocích). Metrika: `skore` (Average). Rozkladová dimenze: `zeme`.
+1. Vytvořte stránku `Trendy zemí` a vložte na ni **jeden nový graf typu Časová řada** ze zdroje `PISA_Vysledky`. Nekopírujte graf s pevným filtrem 2025, pokud jeho filtr sami neodstraníte.
+2. V tomto grafu nastavte dimenzi `datum_cyklu` (Date, zobrazení po rocích), metriku `skore` (Average) a rozkladovou dimenzi `zeme`.
 3. Nastavte filtr `oblast = Čtení` a vyberte čtyři řady: `Česko`, `Finsko`, `Estonsko`, `Průměr OECD (stálých 35)`. Ostatní země lze porovnat v kopii grafu. Region B-S-J-Z do hlavního trendu nezařazujte.
-4. Zapněte značky měřených bodů a v názvu uveďte `Čtení: průměrné skóre patnáctiletých, 2015–2025`. Osa Y je v bodech PISA, nikoli v procentech. Na časové ose je mezi 2018 a 2022 správně čtyřletá mezera.
+4. Na kartě **Styl** nastavte **Chybějící data / Missing data → Lineární interpolace / Linear Interpolation** místo výchozího **Čára k nule / Line To Zero**. Zapněte značky měřených bodů a v názvu uveďte `Čtení: průměrné skóre patnáctiletých, 2015–2025`. Spojnice mezi body slouží jen k vizualizaci trendu: v mezilehlých letech nejsou naměřené hodnoty. Osa Y je v bodech PISA, nikoli v procentech. Na časové ose je mezi 2018 a 2022 správně čtyřletá mezera.
 5. Zkontrolujte českou řadu: **487 → 490 → 489 → 468**. Trendovou referenci OECD neoznačujte jako běžný průměr všech současných členů; jde o stálou skupinu 35 zemí.
 
-Chcete-li sledovat složení výsledků, použijte již připojený zdroj `PISA_Rozlozeni`. Pro filtr `zeme = Česko` a `oblast = Matematika` vložte 100% skládaný sloupcový graf: dimenze `cyklus`, metriky `podil_pod_2`, `podil_2_4`, `podil_5_6` (všechny Average a formát Procenta). Vypněte součty přes roky. Každý ze čtyř sloupců se musí rovnat 100 %; rozlišujte změnu podílu od změny skóre.
+Chcete-li sledovat složení výsledků, použijte již připojený zdroj `PISA_Rozlozeni`. Pro filtr `zeme = Česko` a `oblast = Matematika` vložte 100% skládaný sloupcový graf s názvem `Česko: podíly podle úrovně v matematice, PISA 2015–2025`: dimenze `cyklus`, **bez rozkladové dimenze**, metriky `podil_pod_2`, `podil_2_4`, `podil_5_6` (všechny Average a formát Procenta). Vypněte součty přes roky. Každý ze čtyř sloupců se musí rovnat 100 %; rozlišujte změnu podílu od změny skóre.
 
 !!! warning "Trend není test významnosti"
     Body představují různé kohorty patnáctiletých. Pole `se_skore` udává nejistotu jednotlivého odhadu, nikoli přímo chybu rozdílu mezi dvěma roky. O statistické významnosti rozhodujte podle publikovaných trendových testů OECD, ne podle tvaru křivky. `datum_cyklu` je technické datum 1. ledna pro vykreslení časové osy, ne den testu.
@@ -42,7 +42,7 @@ Přepněte zdroj na `PISA_Rozlozeni`. Pod úrovní 2 znamená nedosažení zákl
 1. Přidejte rozbalovací seznam ze zdroje `PISA_Rozlozeni` s ovládacím polem `oblast`.
 2. Zapněte **jediný výběr**, nastavte výchozí hodnotu `Přírodní vědy` a vypněte možnost vybrat vše. Bez jediné vybrané oblasti by graf smísil tři různé výsledky. [Google: nastavení rozbalovacího seznamu](https://docs.cloud.google.com/data-studio/drop-down-list-and-fixed-size-list-control)
 3. Přidejte vodorovný skládaný pruhový graf se 100% zobrazením a zdrojem `PISA_Rozlozeni`. Nastavte mu pevný filtr `cyklus = 2025`, `typ != Region` a `typ != Reference_stala`.
-4. Dimenze: `zeme`. Metriky v tomto pořadí: `podil_pod_2`, `podil_2_4`, `podil_5_6`. U všech nastavte typ Procenta a agregaci Average. Prostřední podíl už v CSV je; vznikl jako `1 - podil_pod_2 - podil_5_6`.
+4. Dimenze: `zeme`. **Rozkladovou dimenzi nechte prázdnou** (případnou předvyplněnou odeberte). Do hlavní sekce **Metrika**, nikoli **Nepovinné metriky**, přidejte v tomto pořadí `podil_pod_2`, `podil_2_4`, `podil_5_6`. U všech nastavte typ Procenta a agregaci Average. S rozkladovou dimenzí dovoluje Data Studio jen jednu metriku. Prostřední podíl už v CSV je; vznikl jako `1 - podil_pod_2 - podil_5_6`.
 5. Při jediné vybrané oblasti se zobrazí 11 řádků včetně běžného průměru OECD. B-S-J-Z a stálou trendovou referenci filtr tohoto základního grafu vylučuje; jejich podíly však ve zdroji jsou.
 6. Použijte stabilní barvy, například červenooranžovou pro pod úrovní 2, šedou pro 2–4 a zelenou pro 5–6. Legendu přejmenujte srozumitelnými popisky.
 7. Zobrazte podíly na jedno desetinné místo a přidejte název `Rozložení výsledků PISA 2025 podle oblasti`. Aktuální oblast musí být vidět v ovladači.
@@ -68,6 +68,7 @@ Interpretace: dvě země mohou mít podobný průměr, ale jiné podíly slabýc
 5. Zapněte názvy zemí nebo jejich zobrazení po najetí a osy pojmenujte včetně jednotek.
 6. Nadpis: `Průměrné skóre a podíl pod úrovní 2, PISA 2025`.
 7. Označte ovladač oblasti, skládaný graf a bodový graf a seskupte je. Vyzkoušejte postupně všechny tři oblasti; graf změny ze zdroje `PISA_Vysledky` ponechte mimo skupinu. U obou grafů ověřte filtr 2025; v žádném pohledu se nesmí objevit průměr přes více oblastí ani cyklů.
+8. Pokud se po kliknutí na český pruh bodový graf zúží na jediný bod, zrušte výběr pruhu tlačítkem **Resetovat** nebo opětovným kliknutím. Chcete-li v bodovém grafu stále porovnávat všechny země, vypněte u skládaného grafu v **Nastavení → Interakce s grafem** křížové filtrování. Ovladač oblasti bude dál měnit oba grafy.
 
 Pokud rozhraní nabídne bublinový graf s povinnou metrikou velikosti, zvolte základní bodový typ. [Google: bodové grafy](https://docs.cloud.google.com/data-studio/scatter-chart-reference)
 
