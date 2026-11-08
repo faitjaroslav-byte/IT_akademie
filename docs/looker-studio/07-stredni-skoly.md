@@ -40,9 +40,10 @@ Tentýž zdroj `PISA_Druhy_skol_CR` obsahuje také roky 2015, 2018 a 2022. Roky 
 
 1. Na nové stránce `Trendy druhů škol v ČR` vložte **jeden nový graf typu Časová řada** ze zdroje `PISA_Druhy_skol_CR`. Ověřte typ `datum_cyklu` jako Date. Základní graf s filtrem 2025 ponechte beze změny.
 2. V novém grafu nastavte dimenzi `datum_cyklu`, metriku `skore` (Average) a rozkladovou dimenzi `druh_skoly`.
-3. Nastavte filtr `oblast = Přírodní vědy`. Zobrazte značky bodů a ponechte v legendě všech pět kategorií včetně ZŠ. Název grafu: `Přírodní vědy podle druhu školy, ČR 2015–2025`.
-4. Zkontrolujte víceleté gymnázium: **602, 600, 605, 595** bodů. SOU bez maturity: **413, 423, 417, 413** bodů. V roce 2022 je přepočtená hodnota z národního souboru, ostatní jsou převzaté ze zpráv.
-5. Duplikujte graf pro `Čtení` a `Matematika`. U kopií změňte filtr i název na `Čtení podle druhu školy, ČR 2015–2025` a `Matematika podle druhu školy, ČR 2015–2025`. Nemíchejte tři oblasti do jedné řady ani nepočítejte prostý průměr přes pět druhů škol.
+3. U časové řady **nepoužívejte pevný filtr `oblast` ani `cyklus = 2025`**. Přidejte rozbalovací ovladač ze stejného zdroje `PISA_Druhy_skol_CR` s polem `oblast`. Zapněte jediný výběr, nastavte výchozí hodnotu `Přírodní vědy` a vypněte možnost vybrat vše. [Google: nastavení ovladače](https://docs.cloud.google.com/data-studio/drop-down-list-and-fixed-size-list-control)
+4. Graf nadepište `Vývoj skóre podle druhu školy, ČR 2015–2025`; aktuální oblast musí být vidět v ovladači. Zobrazte značky měřených bodů a ponechte v legendě všech pět kategorií včetně ZŠ. Pro chybějící mezilehlé roky nastavte ve **Stylu → Chybějící data** lineární interpolaci místo čáry k nule; spojnice neznamená, že v těchto letech proběhlo měření.
+5. Při výběru Přírodní vědy zkontrolujte víceleté gymnázium: **602, 600, 605, 595** bodů. SOU bez maturity: **413, 423, 417, 413** bodů. V roce 2022 je přepočtená hodnota z národního souboru, ostatní jsou převzaté ze zpráv. Potom v ovladači vyzkoušejte Čtení a Matematiku; žádná z voleb nesmí průměrovat různé oblasti.
+6. Jsou-li na stejné stránce i další grafy ze zdroje `PISA_Druhy_skol_CR`, seskupte ovladač pouze s touto časovou řadou, aby neměnil jejich oblast. [Google: rozsah ovladače](https://docs.cloud.google.com/data-studio/apply-controls-to-specific-charts)
 
 Čáry spojují výsledky **různých skupin patnáctiletých v různých letech**, nesledují pokrok týchž žáků ani konkrétní školy. Školní kategorie jsou národní české členění; bez další harmonizace je nelze porovnávat s typy škol v jiných zemích. V této výukové tabulce nejsou standardní chyby školních skupin, proto z křivek nevyvozujte statisticky významnou změnu.
 
