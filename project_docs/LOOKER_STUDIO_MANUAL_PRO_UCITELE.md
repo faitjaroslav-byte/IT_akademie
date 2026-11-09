@@ -2,6 +2,8 @@
 
 Tento pracovní materiál je uložen pouze v repozitáři. Není součástí publikované učebnice ani navigace MkDocs.
 
+Pro rychlé vedení reportu použijte [tahák pro všech deset stran](LOOKER_STUDIO_TAHAK_CELY_REPORT.md). Pro hodinu 4 je navíc k dispozici kratší [tahák Srovnání zemí](LOOKER_STUDIO_TAHAK_SROVNANI_ZEMI.md).
+
 <div class="lesson-meta">
 <strong>Plná varianta:</strong> 8 × 45 minut (kapitoly 0–7)<br>
 <strong>Zkrácená varianta:</strong> 180 minut<br>
@@ -22,10 +24,10 @@ Před první hodinou otevřete všechny tři CSV z [přehledu kurzu](../docs/loo
 | 1 | Vysvětlit PISA: cyklus, výběr, oblasti, populaci a meze interpretace | Účastník správně popíše, koho výsledek reprezentuje |
 | 2 | Importovat tři CSV, zkontrolovat čísla a řádky | Listy Vysledky, Rozlozeni a Druhy_skol_CR |
 | 3 | Připojit Sheets, ověřit tabulku ČR, vytvořit karty | Stránka Česko v kontextu |
-| 4 | Pruhový graf, pivot a rozdíl proti OECD | Stránka Srovnání zemí |
-| 5 | Mapa, přepínač oblasti, filtr zemí | Ověřené interaktivní pohledy |
-| 6 | Změna, skládaný a bodový graf | Stránka Změny a rozložení |
-| 7 | Připojit české druhy škol, vytvořit tabulku a graf, shrnout omezení | Stránka Druhy škol v ČR a hotový komentář |
+| 4 | Pruhový graf, pivot a rozdíl proti OECD | Stránky 2–4: Srovnání zemí a rozdíly vůči OECD |
+| 5 | Mapa, přepínač oblasti, filtr zemí | Stránka 5: Mapa výsledků |
+| 6 | Změna, trendy, skládaný a bodový graf | Stránky 6–8: Změna, trendy zemí a rozložení |
+| 7 | Připojit české druhy škol, vytvořit tabulku a graf, shrnout omezení | Stránky 9–10: Druhy škol a jejich trendy |
 
 Pro 180minutový workshop věnujte 15 minut představení nástroje a PISA, 30 minut importu a připojení, 45 minut kartám a srovnání, 35 minut filtrům a rozložení, 25 minut interpretaci školních skupin a 30 minut dokončení a sdílení. Bodový graf a rozšíření o vlastní data mohou účastníci dokončit samostatně.
 
@@ -45,11 +47,11 @@ Pro 180minutový workshop věnujte 15 minut představení nástroje a PISA, 30 m
 1. Stáhněte tři CSV z [přehledu kurzu](../docs/looker-studio/index.md) a importujte je do Sheets. Ověřte 141, 141 a 60 datových řádků.
 2. Připojte `Vysledky`, nastavte typy a Average u metrik. Zkontrolujte tři české výsledky v tabulce s filtrem `cyklus = 2025`.
 3. Na stránce `Česko v kontextu` vytvořte tři karty podle oblasti, každou s pevnou podmínkou ČR a rokem 2025.
-4. Přidejte stránku `Srovnání zemí`. Vytvořte pruhový graf přírodních věd, pivot bez součtů a pole `rozdil_oecd`.
-5. Přidejte mapu a přepínače. Odstraňte pevné omezení oblasti pouze u komponent, které mají reagovat na ovladač. Seskupte je.
-6. Na stránce `Změny a rozložení` vytvořte graf publikované změny s filtrem 2025. Připojte list `Rozlozeni`, vytvořte skládaný a bodový graf a seskupte je s ovladačem oblasti nastaveným na jediný výběr. Trendové grafy stavějte ze stejných zdrojů bez filtru roku 2025.
-7. Připojte `Druhy_skol_CR` jako třetí zdroj. Na stránce `Druhy škol v ČR` vytvořte pivot a graf s filtrem 2025 podle [kapitoly 7](../docs/looker-studio/07-stredni-skoly.md); trend skupin čte stejný zdroj.
-8. Poslední stránku pojmenujte `Co z dat vyplývá`. Vložte tři části: zjištění, omezení, návrh aktivity pro vlastní třídu. Doplňte populaci, cyklus, jednotky, zdroj a datum převzetí dat. Uveďte, že jde o deset vybraných zemí, jeden čínský region a české druhy škol.
+4. Na stránce `Srovnání zemí` vytvořte pruhový graf přírodních věd a pivot bez součtů. Pole `rozdil_oecd` použijte na dvou stránkách `Rozdíl vůči OECD: přírodní vědy a čtení` a `Rozdíl vůči OECD: matematika`.
+5. Na stránce `Mapa výsledků` přidejte mapu a přepínače. Odstraňte pevné omezení oblasti pouze u komponent, které mají reagovat na ovladač. Seskupte je.
+6. Na stránce `Změna výsledků 2022–2025` vytvořte graf publikované změny s filtrem 2025. Na `Trendy zemí 2015–2025` vytvořte časovou řadu bez filtru roku 2025. Připojte list `Rozlozeni`; na stránce `Rozložení výsledků 2025` vytvořte skládaný a bodový graf a seskupte je s ovladačem oblasti nastaveným na jediný výběr.
+7. Připojte `Druhy_skol_CR` jako třetí zdroj. Na stránce `Druhy škol v ČR 2025` vytvořte pivot a graf s filtrem 2025; na `Trendy druhů škol v ČR` vytvořte jednu časovou řadu s výběrem oblasti podle [kapitoly 7](../docs/looker-studio/07-stredni-skoly.md).
+8. Do komentáře k reportu doplňte zjištění, omezení a návrh aktivity pro vlastní třídu. Uveďte populaci, cyklus, jednotky, zdroj a datum převzetí dat. Základní report má deset stránek; samostatnou stránku `Co z dat vyplývá` nevyžaduje.
 9. V režimu zobrazení projděte všechny ovladače. Vraťte je do výchozího stavu.
 10. Otevřete **Sdílet / Share**, přidejte konkrétního kolegu jako čtenáře a vyzkoušejte přístup z jeho účtu. Odkaz do kurzu přidávejte až po ověření přístupu.
 

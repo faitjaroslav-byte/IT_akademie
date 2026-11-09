@@ -10,7 +10,7 @@
 Mapa pomáhá orientaci v prostoru. Pro přesné srovnání ponechte vedle ní pruhový graf: velká země na mapě získává větší vizuální váhu, přestože plocha nevypovídá o výsledku žáků.
 
 1. Ve zdroji `PISA_Vysledky` nastavte u `iso3` typ **Geo → Country / Země**.
-2. Na stránku `Srovnání zemí` vložte **Google Maps**, například vyplněnou mapu, pokud ji rozhraní nabízí. Alternativou je **Geo chart / Geografický graf**, ale ten nenabízí stejné interaktivní přibližování a posun mapy.
+2. Pátou stránku pojmenujte `Mapa výsledků`, stejný nadpis vložte nad mapu a přidejte **Google Maps**, například vyplněnou mapu, pokud ji rozhraní nabízí. Alternativou je **Geo chart / Geografický graf**, ale ten nenabízí stejné interaktivní přibližování a posun mapy.
 3. Jako geografickou dimenzi použijte `iso3`, jako barevnou metriku `skore`, Average.
 4. Nastavte filtr AND: `typ = Zeme`, `cyklus = 2025` a `oblast = Přírodní vědy`.
 5. Mapu nadepište `Skóre patnáctiletých podle země, PISA 2025` a zobrazte svět. Zapněte legendu a zkontrolujte ČR, Singapur, Jižní Koreu i USA. U **Google Maps** otevřete **Styl → Ovládací prvky mapy / Map controls** a zapněte **Povolit posun a přiblížení**, **Zobrazit ovládání přiblížení (+/−)** a **Zobrazit celou obrazovku**. V režimu zobrazení pak vyzkoušejte přiblížení Česka i Singapuru a návrat na výchozí pohled. [Google: ovládání mapy](https://docs.cloud.google.com/data-studio/google-maps-reference)

@@ -5,7 +5,7 @@
 <strong>Výstup:</strong> Pruhový graf, kontingenční tabulka a graf rozdílů vůči OECD.
 </div>
 
-Všechny tři pohledy čerpají ze zdroje `PISA_Vysledky` a používají pevný filtr `cyklus = 2025`. Vytvořte stránku `Srovnání zemí`. Na stránce ponechte poznámku „Výběr deseti zemí, patnáctiletí, PISA 2025; B-S-J-Z zvlášť jako region“.
+Všechny tři pohledy čerpají ze zdroje `PISA_Vysledky` a používají pevný filtr `cyklus = 2025`. Druhou stránku pojmenujte `Srovnání zemí` a stejný nadpis vložte nad grafy. Na stránce ponechte poznámku „Výběr deseti zemí, patnáctiletí, PISA 2025; B-S-J-Z zvlášť jako region“.
 
 ## Pohled 2: srovnávací pruhový graf
 
@@ -56,6 +56,8 @@ skore - oecd_skore
 4. Zkopírujte pruhový graf přírodních věd a metriku změňte na `rozdil_oecd`.
 5. Zachovejte filtr `typ = Zeme`, `cyklus = 2025` a jedné oblasti. Nastavte viditelnou nulu a osu umožňující záporné hodnoty.
 6. Nadpis: `Rozdíl vůči OECD v bodech, přírodní vědy 2025`.
+
+Grafy rozdílů umístěte na samostatné stránky: třetí pojmenujte `Rozdíl vůči OECD: přírodní vědy a čtení`, čtvrtou `Rozdíl vůči OECD: matematika`. Na obě stránky vložte nahoře textový nadpis shodný s názvem stránky. Na třetí stránku dejte graf přírodních věd a jeho kopii s filtrem `oblast = Čtení` a názvem `Rozdíl vůči OECD v bodech, čtení 2025`. Na čtvrtou dejte další kopii s filtrem `oblast = Matematika` a názvem `Rozdíl vůči OECD v bodech, matematika 2025`. U každé kopie zachovejte filtr `typ = Zeme`, `cyklus = 2025` a viditelnou nulu na ose.
 
 Pro ČR vychází `490 − 482 = 8`. Výsledek označte „o 8 bodů nad publikovanou referencí OECD“, nikoli „o 8 % lepší“. Nula znamená shodný zaokrouhlený bodový odhad. [OECD: ČR a reference](https://gpseducation.oecd.org/CountryProfile?primaryCountry=CZE&topic=PI&treshold=10)
 

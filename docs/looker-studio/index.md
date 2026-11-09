@@ -17,7 +17,22 @@ Základní pohledy pracují s **PISA 2025**, časové řady přidávají cykly *
 
 ## Co vytvoříte
 
-Report bude mít pět stránek: **Česko v kontextu**, **Srovnání zemí**, **Změny a rozložení**, **Druhy škol v ČR** a **Co z dat vyplývá**. V tomto kurzu znamená *data view* konkrétní pohled na data v reportu, například tabulku, mapu nebo graf. Nejde o databázový SQL view.
+Základní report má **deset stránek** v pořadí odpovídajícím [kapitolám 3–7](03-prvni-report.md). Název stránky nastavte v navigaci reportu a stejné znění vložte jako viditelný nadpis nad její obsah. Názvy jednotlivých grafů jsou samostatné a upřesňují oblast, cyklus a jednotku. V tomto kurzu znamená *data view* konkrétní pohled na data v reportu, například tabulku, mapu nebo graf. Nejde o databázový SQL view.
+
+| Stránka reportu | Obsah |
+| --- | --- |
+| 1. **Česko v kontextu** | Kontrolní tabulka a tři karty skóre ČR. |
+| 2. **Srovnání zemí** | Pruhové srovnání a kontingenční tabulka. |
+| 3. **Rozdíl vůči OECD: přírodní vědy a čtení** | Dva pruhové grafy rozdílů. |
+| 4. **Rozdíl vůči OECD: matematika** | Třetí graf rozdílů. |
+| 5. **Mapa výsledků** | Mapa a ovladače oblasti a země. |
+| 6. **Změna výsledků 2022–2025** | Publikovaná změna v přírodních vědách. |
+| 7. **Trendy zemí 2015–2025** | Časová řada skóre zemí a stálé reference OECD. |
+| 8. **Rozložení výsledků 2025** | Skládané podíly a bodový graf. |
+| 9. **Druhy škol v ČR 2025** | Kontingenční tabulka a skupinový pruhový graf. |
+| 10. **Trendy druhů škol v ČR** | Časová řada s výběrem oblasti. |
+
+Závěrečná interpretace patří do výuky a komentáře k reportu; samostatnou jedenáctou stránku v základním postupu nevyžadujeme.
 
 | Pohled | Otázka | Návod |
 | --- | --- | --- |

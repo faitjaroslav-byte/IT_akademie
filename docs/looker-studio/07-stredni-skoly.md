@@ -25,7 +25,7 @@ Porovnávejte skupiny především v rámci stejné oblasti. Skóre různých ob
 
 1. V reportu zvolte **Zdroje / Resource → Spravovat přidané zdroje dat** a připojte list `Druhy_skol_CR` ze stejné tabulky Google Sheets. Zdroj nazvěte `PISA_Druhy_skol_CR`. Je to třetí a poslední základní zdroj.
 2. Ověřte typ `skore` jako číslo a jeho agregaci Average. `druh_skoly` a `oblast` jsou textové dimenze. Nepoužívejte součet skóre.
-3. Vytvořte stránku `Druhy škol v ČR` a vložte kontingenční tabulku s názvem `Skóre patnáctiletých podle druhu školy a oblasti, ČR 2025`. Řádky: `druh_skoly`, sloupce: `oblast`, metrika: `skore` (Average). Nastavte pevný filtr `cyklus = 2025`.
+3. Devátou stránku pojmenujte `Druhy škol v ČR 2025`, vložte stejný nadpis nad obsah a přidejte kontingenční tabulku s názvem `Skóre patnáctiletých podle druhu školy a oblasti, ČR 2025`. Řádky: `druh_skoly`, sloupce: `oblast`, metrika: `skore` (Average). Nastavte pevný filtr `cyklus = 2025`.
 4. Vypněte součty řádků a sloupců. Tabulka má pět řádků a tři sloupce hodnot. Zkontrolujte 595 u víceletého gymnázia v přírodních vědách a 404 u SOU v matematice.
 5. Vedle tabulky vložte skupinový pruhový graf s názvem `Skóre podle druhu školy ve třech oblastech, ČR 2025`. Použijte `druh_skoly` jako dimenzi, `oblast` jako rozkladovou dimenzi a `skore` jako metriku. Nastavte mu také filtr `cyklus = 2025`. Ponechte hodnoty čitelné a popisek osy `body PISA`.
 6. Přidejte volič oblasti pouze pro tento zdroj, pokud chcete detailní graf jedné oblasti. Po výběru Čtení ověřte ZŠ 436 a čtyřleté gymnázium 564.
@@ -38,7 +38,7 @@ Porovnávejte skupiny především v rámci stejné oblasti. Skóre různých ob
 
 Tentýž zdroj `PISA_Druhy_skol_CR` obsahuje také roky 2015, 2018 a 2022. Roky 2015 a 2018 jsou publikované odhady ČŠI; rok 2022 je vážený výpočet z [národní žákovské databáze ČŠI](https://csicr.cz/cz/Mezinarodni-setreni/PISA/Datove-soubory-a-dotazniky/PISA-2022) pomocí všech deseti plausible values. Podrobný původ každého řádku je v [datovém slovníku](data/README.md#vysledky-ceskych-druhu-skol).
 
-1. Na nové stránce `Trendy druhů škol v ČR` vložte **jeden nový graf typu Časová řada** ze zdroje `PISA_Druhy_skol_CR`. Ověřte typ `datum_cyklu` jako Date. Základní graf s filtrem 2025 ponechte beze změny.
+1. Desátou stránku pojmenujte `Trendy druhů škol v ČR`, vložte stejný nadpis nad obsah a přidejte **jeden nový graf typu Časová řada** ze zdroje `PISA_Druhy_skol_CR`. Ověřte typ `datum_cyklu` jako Date. Základní graf s filtrem 2025 ponechte beze změny.
 2. V novém grafu nastavte dimenzi `datum_cyklu`, metriku `skore` (Average) a rozkladovou dimenzi `druh_skoly`.
 3. U časové řady **nepoužívejte pevný filtr `oblast` ani `cyklus = 2025`**. Přidejte rozbalovací ovladač ze stejného zdroje `PISA_Druhy_skol_CR` s polem `oblast`. Zapněte jediný výběr, nastavte výchozí hodnotu `Přírodní vědy` a vypněte možnost vybrat vše. [Google: nastavení ovladače](https://docs.cloud.google.com/data-studio/drop-down-list-and-fixed-size-list-control)
 4. Graf nadepište `Vývoj skóre podle druhu školy, ČR 2015–2025`; aktuální oblast musí být vidět v ovladači. Zobrazte značky měřených bodů a ponechte v legendě všech pět kategorií včetně ZŠ. Pro chybějící mezilehlé roky nastavte ve **Stylu → Chybějící data** lineární interpolaci místo čáry k nule; spojnice neznamená, že v těchto letech proběhlo měření.
